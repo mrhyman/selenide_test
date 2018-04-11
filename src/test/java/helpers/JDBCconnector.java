@@ -1,7 +1,6 @@
 package helpers;
 
 import java.sql.*;
-import java.util.ArrayList;
 
 public class JDBCconnector {
     private static final String url = "jdbc:sqlserver://192.0.2.142:1433;databaseName=qa_core_67";
