@@ -13,4 +13,5 @@ dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
     testCompile 'com.codeborne:selenide:4.11.1'
     compile group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '2.41.0'
+    testCompile group: 'com.microsoft.sqlserver', name: 'mssql-jdbc', version: '6.4.0.jre8'
 }

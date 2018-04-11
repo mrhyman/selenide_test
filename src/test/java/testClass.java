@@ -1,5 +1,7 @@
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.junit.ScreenShooter;
+import helpers.Highlighter;
+import helpers.JDBCconnector;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Rule;
@@ -20,6 +22,7 @@ public class testClass {
         baseUrl = "https://192.0.2.67/driver-portal";
         addListener(new Highlighter());
 
+        JDBCconnector.returnQuery();
         open("/");
     }
 
