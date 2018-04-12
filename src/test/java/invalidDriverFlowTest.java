@@ -9,14 +9,10 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 
 public class invalidDriverFlowTest extends driverFlowTest{
+
     @Test
     public void controlsAreShownTest() {
         $("#email").shouldBe(Condition.visible);
 
     }
-
-//    @Test
-//    public void passwordControlIsShownTest() {
-//        driver.find_elements_by_xpath("//*[contains(text(), 'My Button')]")
-//    }
 }
