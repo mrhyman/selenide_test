@@ -2,16 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4dfc8271-6e2c-42b6-bf62-cc24d2ce8639" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.bin" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.lock" afterPath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.lock" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" afterPath="$PROJECT_DIR$/.idea/gradle.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/out/test/classes/helpers/JDBCconnector.class" afterPath="$PROJECT_DIR$/out/test/classes/helpers/JDBCconnector.class" />
-      <change beforePath="$PROJECT_DIR$/out/test/classes/testClass.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/helpers/JDBCconnector.java" afterPath="$PROJECT_DIR$/src/test/java/helpers/JDBCconnector.java" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/testClass.java" afterPath="$PROJECT_DIR$/src/test/java/driverFlowTest.java" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/invalidDriverFlowTest.java" afterPath="$PROJECT_DIR$/src/test/java/invalidDriverFlowTest.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -45,11 +37,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="validDriverFlowTest.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="validDriverFlowTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/validDriverFlowTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="452">
-              <caret line="38" column="16" lean-forward="false" selection-start-line="38" selection-start-column="16" selection-end-line="38" selection-end-column="16" />
+            <state relative-caret-position="420">
+              <caret line="28" column="5" lean-forward="true" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -57,32 +49,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="driver.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/testData/drivers/driver.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="24" lean-forward="false" selection-start-line="3" selection-start-column="4" selection-end-line="6" selection-end-column="24" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="validDriver.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/testData/drivers/validDriver.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="18" lean-forward="false" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="invalidDriverFlowTest.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="invalidDriverFlowTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/invalidDriverFlowTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="34" lean-forward="false" selection-start-line="0" selection-start-column="34" selection-end-line="0" selection-end-column="34" />
-              <folding />
+            <state relative-caret-position="255">
+              <caret line="17" column="6" lean-forward="false" selection-start-line="17" selection-start-column="6" selection-end-line="20" selection-end-column="7" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -511,6 +485,7 @@
         <option value="$PROJECT_DIR$/src/test/java/testData/drivers/driver.java" />
         <option value="$PROJECT_DIR$/src/test/java/testData/drivers/validDriver.java" />
         <option value="$PROJECT_DIR$/src/test/java/validDriverFlowTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/invalidDriverFlowTest.java" />
       </list>
     </option>
   </component>
@@ -561,30 +536,6 @@
               <item name="selenide_test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="build" type="462c0819:PsiDirectoryNode" />
               <item name="reports" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="selenium_test" type="b2602c69:ProjectViewProjectNode" />
-              <item name="selenide_test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="build" type="462c0819:PsiDirectoryNode" />
-              <item name="reports" type="462c0819:PsiDirectoryNode" />
-              <item name="tests" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="selenium_test" type="b2602c69:ProjectViewProjectNode" />
-              <item name="selenide_test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="build" type="462c0819:PsiDirectoryNode" />
-              <item name="reports" type="462c0819:PsiDirectoryNode" />
-              <item name="tests" type="462c0819:PsiDirectoryNode" />
-              <item name="validDriverFlowTest" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="selenium_test" type="b2602c69:ProjectViewProjectNode" />
-              <item name="selenide_test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="build" type="462c0819:PsiDirectoryNode" />
-              <item name="reports" type="462c0819:PsiDirectoryNode" />
-              <item name="tests" type="462c0819:PsiDirectoryNode" />
-              <item name="validDriverFlowTest" type="462c0819:PsiDirectoryNode" />
-              <item name="mapIsShownTest" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="selenium_test" type="b2602c69:ProjectViewProjectNode" />
@@ -856,44 +807,44 @@
       <workItem from="1523465422384" duration="2200000" />
       <workItem from="1523468064487" duration="214000" />
       <workItem from="1523468420069" duration="427000" />
-      <workItem from="1523468878537" duration="3227000" />
+      <workItem from="1523468878537" duration="4961000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="All_in_selenium_test_test - 2018.04.11 at 22h 25m 53s.xml">
-      <configuration name="All in selenium_test_test" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="All_in_selenium_test_test - 2018.04.11 at 22h 38m 01s.xml">
-      <configuration name="All in selenium_test_test" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="All_in_selenium_test_test - 2018.04.11 at 22h 39m 33s.xml">
-      <configuration name="All in selenium_test_test" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="All_in_selenium_test_test - 2018.04.11 at 22h 40m 41s.xml">
-      <configuration name="All in selenium_test_test" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="All_in_selenium_test_test - 2018.04.11 at 22h 41m 15s.xml">
-      <configuration name="All in selenium_test_test" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="All_in_selenium_test_test - 2018.04.11 at 22h 43m 49s.xml">
-      <configuration name="All in selenium_test_test" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="All_in_selenium_test_test - 2018.04.11 at 22h 48m 26s.xml">
       <configuration name="All in selenium_test_test" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="validDriverFlowTest_mapIsShownTest - 2018.04.11 at 22h 44m 36s.xml">
-      <configuration name="validDriverFlowTest.mapIsShownTest" configurationId="JUnit" />
+    <history-entry file="All_in_selenium_test_test - 2018.04.11 at 22h 53m 34s.xml">
+      <configuration name="All in selenium_test_test" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="validDriverFlowTest_mapIsShownTest - 2018.04.11 at 22h 45m 35s.xml">
-      <configuration name="validDriverFlowTest.mapIsShownTest" configurationId="JUnit" />
+    <history-entry file="All_in_selenium_test_test - 2018.04.11 at 23h 13m 49s.xml">
+      <configuration name="All in selenium_test_test" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="validDriverFlowTest_mapIsShownTest - 2018.04.11 at 22h 48m 08s.xml">
-      <configuration name="validDriverFlowTest.mapIsShownTest" configurationId="JUnit" />
+    <history-entry file="All_in_selenium_test_test - 2018.04.11 at 23h 14m 52s.xml">
+      <configuration name="All in selenium_test_test" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="All_in_selenium_test_test - 2018.04.11 at 23h 16m 51s.xml">
+      <configuration name="All in selenium_test_test" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="All_in_selenium_test_test - 2018.04.11 at 23h 20m 10s.xml">
+      <configuration name="All in selenium_test_test" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="All_in_selenium_test_test - 2018.04.11 at 23h 30m 46s.xml">
+      <configuration name="All in selenium_test_test" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="All_in_selenium_test_test - 2018.04.11 at 23h 31m 31s.xml">
+      <configuration name="All in selenium_test_test" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="All_in_selenium_test_test - 2018.04.11 at 23h 39m 10s.xml">
+      <configuration name="All in selenium_test_test" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="All_in_selenium_test_test - 2018.04.11 at 23h 44m 03s.xml">
+      <configuration name="All in selenium_test_test" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6222000" />
+    <option name="totallyTimeSpent" value="7956000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
@@ -907,7 +858,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4462641" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4462641" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3285568" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -967,7 +918,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="34" lean-forward="false" selection-start-line="0" selection-start-column="34" selection-end-line="0" selection-end-column="34" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1013,7 +966,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="34" lean-forward="false" selection-start-line="0" selection-start-column="34" selection-end-line="0" selection-end-column="34" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1069,7 +1024,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="34" lean-forward="false" selection-start-line="0" selection-start-column="34" selection-end-line="0" selection-end-column="34" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1308,22 +1265,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/env.properties" />
-    <entry file="file://$PROJECT_DIR$/src/test/java/invalidDriverFlowTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="34" lean-forward="false" selection-start-line="0" selection-start-column="34" selection-end-line="0" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/testData/drivers/driver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="24" lean-forward="false" selection-start-line="3" selection-start-column="4" selection-end-line="6" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/driverFlowTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="269">
@@ -1331,6 +1272,19 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/reports/tests/validDriverFlowTest/mapIsShownTest/1523471971872.1.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/testData/drivers/driver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="24" lean-forward="false" selection-start-line="3" selection-start-column="4" selection-end-line="6" selection-end-column="24" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1342,15 +1296,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/build/reports/tests/validDriverFlowTest/mapIsShownTest/1523471971872.1.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/validDriverFlowTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="452">
-          <caret line="38" column="16" lean-forward="false" selection-start-line="38" selection-start-column="16" selection-end-line="38" selection-end-column="16" />
+        <state relative-caret-position="420">
+          <caret line="28" column="5" lean-forward="true" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/invalidDriverFlowTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="6" lean-forward="false" selection-start-line="17" selection-start-column="6" selection-end-line="20" selection-end-column="7" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
