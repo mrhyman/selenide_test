@@ -8,7 +8,6 @@ import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.*;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.getElements;
-import static org.junit.Assert.assertThat;
 
 public class validDriverFlowTest extends driverFlowTest{
 

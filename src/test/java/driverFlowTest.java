@@ -22,7 +22,7 @@ public class driverFlowTest {
     @BeforeClass
     public static void openDriverPortal() {
         timeout = 10000;
-        baseUrl = "https://192.0.2.67/driver-portal";
+        baseUrl = "https://192.0.2.69/driver-portal";
         addListener(new Highlighter());
         open("/");
     }
