@@ -21,7 +21,7 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath "io.qameta.allure:allure-gradle:2.5"
+        classpath "io.qameta.allure:allure-gradle:2.4"
     }
 }
 
