@@ -1,33 +1,29 @@
+package testSuites;
+
 import com.codeborne.selenide.junit.ScreenShooter;
 import helpers.Highlighter;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Rule;
-import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
+import testCases.driverPortals.GTC.FirstJourneyTabTest;
+import testCases.driverPortals.GTC.InvalidDriverTest;
+import testCases.driverPortals.GTC.ValidDriverTest;
 
-import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Configuration.baseUrl;
-import static com.codeborne.selenide.Configuration.browser;
 import static com.codeborne.selenide.Configuration.timeout;
-import static com.codeborne.selenide.Selectors.byAttribute;
-import static com.codeborne.selenide.Selectors.byClassName;
-import static com.codeborne.selenide.Selectors.byXpath;
-import static com.codeborne.selenide.Selenide.*;
+import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.WebDriverRunner.addListener;
 import static com.codeborne.selenide.WebDriverRunner.closeWebDriver;
-import static com.codeborne.selenide.WebDriverRunner.isChrome;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
 
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
-        invalidDriverFlowTest.class,
-        firstJourneyTabTest.class
+        InvalidDriverTest.class,
+        ValidDriverTest.class,
+        FirstJourneyTabTest.class
 })
-public class driverFlowTestSuite {
+public class DriverPortal {
 
     @BeforeClass
     public static void openDriverPortal() {

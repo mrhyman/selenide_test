@@ -1,20 +1,15 @@
+package testCases.driverPortals.GTC;
+
 import com.codeborne.selenide.Condition;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.junit.runners.Suite;
 import org.openqa.selenium.By;
 
-import static com.codeborne.selenide.Condition.cssClass;
-import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Condition.visible;
+import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.getElements;
 
-@RunWith(Suite.class)
-@Suite.SuiteClasses({
-        validDriverFlow.class
-})
-public class firstJourneyTabTest {
+public class FirstJourneyTabTest {
+
     @Test
     public void driverAddressIsShownTest() {
         $("#textfield-1011-inputEl")

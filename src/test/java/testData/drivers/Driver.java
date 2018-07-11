@@ -1,6 +1,6 @@
 package testData.drivers;
 
-public class driver {
+public class Driver {
     public String NAME;
     public String EMAIL;
     public String PIN;

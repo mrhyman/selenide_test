@@ -1,21 +1,21 @@
+package testCases.driverPortals.GTC;
+
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.openqa.selenium.By;
-import testData.drivers.invalidDriver;
+import pages.driverPortal.gtc.GTCDriverLoginPage;
+import testData.drivers.InvalidDriver;
 
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.*;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.getElement;
 
-public class invalidDriverFlowTest extends driverFlow{
+public class InvalidDriverTest extends GTCDriverPortal {
 
     @BeforeClass
-    public static void invalidDriverLogin() {
-        $("#email").setValue(invalidDriver.EMAIL);
-        $("#password").setValue(invalidDriver.PIN);
-        $(byName("_spring_security_remember_me")).click();
-        $(byText("login")).click();
+    public static void invalidLogin() {
+        GTCDriverLoginPage.invalidLogin(new InvalidDriver());
     }
 
     @Test
@@ -70,7 +70,7 @@ public class invalidDriverFlowTest extends driverFlow{
 
     @Test
     public void logoIsShownTest(){
-        $(byAttribute("src", "/driver-portal-static/resources/company/GTC/images/login_logo.png")).shouldBe(visible);
+        $(byXpath("/html/body/div[1]/img")).isImage();
     }
 
     @Test

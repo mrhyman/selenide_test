@@ -1,23 +1,28 @@
+package testCases.driverPortals.GTC;
+
 import com.codeborne.selenide.Condition;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import org.openqa.selenium.By;
-import testData.drivers.validDriver;
+import org.junit.runners.Suite;
+import pages.driverPortal.gtc.GTCDriverLoginPage;
+import testData.drivers.ValidDriver;
 
-import static com.codeborne.selenide.Condition.*;
+import java.time.Year;
+
+import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.*;
 import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.getElements;
 
-public class validDriverFlow extends driverFlow{
+@Suite.SuiteClasses({
+        FirstJourneyTabTest.class
+})
+public class ValidDriverTest extends GTCDriverPortal {
 
     @BeforeClass
-    public static void login() {
-        $("#loadmask-1218-msgEl").waitUntil(Condition.disappears, 10000);
-        $("#email").setValue(validDriver.EMAIL);
-        $("#password").setValue(validDriver.PIN);
-        $(byName("_spring_security_remember_me")).click();
-        $(byText("login")).click();
+    public static void validDriverLogin() {
+        GTCDriverLoginPage.validLogin(new ValidDriver());
+
     }
 
     @Test
@@ -63,8 +68,9 @@ public class validDriverFlow extends driverFlow{
     }
 
     @Test
-    public void driverNameIsShownTest() {
-        $(byText(validDriver.NAME)).shouldBe(visible);
+    public void driverGreetingIsShownTest() {
+        $(byClassName("logout")).shouldHave(text("Hello, "));
+        $(byText(new ValidDriver().NAME)).shouldBe(visible);
     }
 
     @Test
@@ -73,36 +79,23 @@ public class validDriverFlow extends driverFlow{
     }
 
     @Test
-    public void driverAddressIsShownTest() {
-        $("#textfield-1011-inputEl")
-                .shouldBe(Condition.visible)
-                .shouldNotBe(Condition.empty);
+    public void logoIsShownTest(){
+        $(byXpath("//*[@id=\"ext-gen1019\"]/div[1]/img")).isImage();
     }
 
     @Test
-    public void driverNextShiftIsShownTest() {
-        $("#textfield-1012-inputEl")
-                .shouldBe(Condition.visible)
-                .shouldNotBe(Condition.empty);
+    public void contactUsFooterIsShownTest(){
+        $(byClassName("page-footer-left"))
+                .shouldBe(visible)
+                .shouldHave(text("If you have any questions please email us at "));
     }
 
     @Test
-    public void mapIsShownTest() {
-        $("#mapFrame").shouldBe(Condition.visible);
+    public void copyrightFooterIsShownTest(){
+        int year = Year.now().getValue();
+        $(byClassName("page-footer-right"))
+                .shouldBe(visible)
+                .shouldHave(text("Copyright © " + year + " greentomatocars"));
     }
 
-    @Test
-    public void jobsTableIsShown() {
-        $("#panel-1013").shouldBe(visible);
-    }
-
-    @Test
-    public void selectFirstJobButtonIsShownTest() {
-        if (getElements(By.className("x-grid-row")).size() > 0) {
-            $("#button-1014").shouldNotHave(cssClass("x-btn-disabled"));
-        } else {
-            $("#button-1014").shouldHave(cssClass("x-btn-disabled"));
-        }
-        $("#button-1014").shouldHave(text("Select"));
-    }
 }
