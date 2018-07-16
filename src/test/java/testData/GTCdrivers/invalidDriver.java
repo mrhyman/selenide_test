@@ -1,4 +1,4 @@
-package testData.drivers;
+package testData.GTCdrivers;
 
 public class invalidDriver extends driver{
     public static String EMAIL = "invalid@mail.ru";
