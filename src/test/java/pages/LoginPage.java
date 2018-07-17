@@ -42,10 +42,6 @@ public class LoginPage extends PageObject {
         click(By.tagName("button"));
     }
 
-    public void verifyLogin() {
-        Assert.assertTrue(driver.getCurrentUrl().equals("https://192.0.2.67/driver-portal/"));
-    }
-
     public void verifyTitle() {
         Assert.assertEquals("greentomatocars - Driver Portal", driver.getTitle());
     }
@@ -100,8 +96,13 @@ public class LoginPage extends PageObject {
         Assert.assertTrue(button.getText().equals("login"));
     }
 
-    public void verifyErrorMessage() {
-        WebElement message = driver.findElement(By.className("errorMessage"));
-        Assert.assertEquals("Invalid email or password", message.getText());
+    public void verifyLogin(Boolean valid) {
+        if (valid) {
+            Assert.assertTrue(driver.getCurrentUrl().equals("https://192.0.2.67/driver-portal/"));
+        } else {
+            WebElement message = driver.findElement(By.className("errorMessage"));
+            Assert.assertEquals("Invalid email or password", message.getText());
+        }
+
     }
 }

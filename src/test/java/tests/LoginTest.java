@@ -1,9 +1,13 @@
 package tests;
 
+import junitparams.JUnitParamsRunner;
+import junitparams.Parameters;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 import pages.LoginPage;
 
+@RunWith(JUnitParamsRunner.class)
 public class LoginTest extends BaseTest {
 
     private static LoginPage loginPage;
@@ -54,15 +58,12 @@ public class LoginTest extends BaseTest {
     }
 
     @Test
-    public void driverWithWrongCredentialsLogin() {
-        loginPage.login("totalywrong@email.com", "111");
-        loginPage.verifyErrorMessage();
-    }
-
-    @Test
-    public void driverLogin() {
-        loginPage.setRememberMe();
-        loginPage.login("t@t.1t", "6474");
-        loginPage.verifyLogin();
+    @Parameters({
+            "totalywrong@email.com,111,false",
+            "t@t.t,6474,true"
+    })
+    public void driverLogin(String email, String pin, Boolean valid) {
+        loginPage.login(email, pin);
+        loginPage.verifyLogin(valid);
     }
 }
