@@ -1,5 +1,6 @@
 package tests;
 
+import helpers.DriverProvider;
 import junitparams.JUnitParamsRunner;
 import junitparams.Parameters;
 import org.junit.BeforeClass;
@@ -58,12 +59,15 @@ public class LoginTest extends BaseTest {
     }
 
     @Test
-    @Parameters({
-            "totalywrong@email.com,111,false",
-            "t@t.t,6474,true"
-    })
-    public void driverLogin(String email, String pin, Boolean valid) {
-        loginPage.login(email, pin);
+    @Parameters(source = DriverProvider.class)
+
+//            {
+//            "totalywrong@email.com,111,false",
+//            "t@t.t,6474,true"
+//    })
+    public void driverLogin(String driver, Boolean valid) {
+        loginPage.login(driver.split(",")[0], driver.split(",")[1]);
         loginPage.verifyLogin(valid);
+
     }
 }

@@ -1,0 +1,8 @@
+version: 1.0
+released: 2012-11-30
+
+# SqlConnection parameters
+connection:
+    url: jdbc:sqlserver://192.0.2.142:1433;databaseName=qa_core_67
+    user: sa
+    password: GaRptING5109
