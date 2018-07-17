@@ -1,4 +1,4 @@
-package Pages.GTCDriverPortal;
+package pages.GTCDriverPortal;
 
 import org.openqa.selenium.WebDriver;
 

@@ -2,42 +2,47 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d0fc0704-bdb8-436d-b73d-fc7147206553" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/Helpers/WebDriverInit.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/Pages/PageObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.allure/allure-2.4.1/bin/allure" beforeDir="false" afterPath="$PROJECT_DIR$/.allure/allure-2.4.1/bin/allure" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.4/fileChanges/last-build.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.bin" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/classes/GTCDriver/driverFlowTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/classes/GTCDriver/driverFlowTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/classes/Pages/GTCDriverPortal/LoginPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/classes/Pages/GTCDriverPortal/LoginPage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/classes/helpers/Locators/Locators$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/classes/helpers/Locators/Locators$LocatorType.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/classes/helpers/Locators/Locators.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/classes/testCases/driverPortals/GTC/FirstJourneyTabTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/classes/testCases/driverPortals/GTC/GTCDriverPortal.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/classes/testCases/driverPortals/GTC/InvalidDriverTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/classes/testCases/driverPortals/GTC/ValidDriverTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/classes/GTCDriver/driverFlowTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/classes/GTCDriver/validDriverFlowTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/classes/Pages/GTCDriverPortal/FirstJourneyPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/classes/Pages/GTCDriverPortal/FirstJourneyPage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/classes/Pages/GTCDriverPortal/LoginPage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/classes/Pages/PageObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/classes/Pages/PageObject.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/classes/TestRunner.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/classes/dockerTest/ChromeTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/classes/helpers/Highlighter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/classes/helpers/WebDriverInit.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/classes/invalidDriverFlowTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/classes/testData/GTCdrivers/driver.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/classes/testData/GTCdrivers/invalidDriver.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/classes/testData/GTCdrivers/validDriver.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Backlog/GTCdrivers/driver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Backlog/GTCdrivers/driver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Backlog/GTCdrivers/invalidDriver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Backlog/GTCdrivers/invalidDriver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Backlog/GTCdrivers/validDriver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Backlog/GTCdrivers/validDriver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Backlog/Helpers/Highlighter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Backlog/Helpers/Highlighter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Backlog/Helpers/JDBCconnector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Backlog/Helpers/JDBCconnector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Backlog/Helpers/Locators/Locators.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Backlog/Helpers/Locators/Locators.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Backlog/Helpers/WebDriverInit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Backlog/Helpers/WebDriverInit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Backlog/dockerTest/ChromeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Backlog/dockerTest/ChromeTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Backlog/invalidDriverFlowTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Backlog/invalidDriverFlowTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/GTCDriver/driverFlowTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GTCDriver/driverFlowTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Helpers/Locators/Locators.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Helpers/Locators/Locators.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Helpers/Locators/locators.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Helpers/Locators/locators.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Pages/GTCDriverPortal/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Pages/GTCDriverPortal/LoginPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pages/driverPortal/DriverPortalPage.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pages/driverPortal/gtc/FirstJourneyPage.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pages/driverPortal/gtc/GTCDriverLoginPage.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/testCases/driverPortals/GTC/FirstJourneyTabTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/testCases/driverPortals/GTC/GTCDriverPortal.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/testCases/driverPortals/GTC/InvalidDriverTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/testCases/driverPortals/GTC/ValidDriverTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/testData/drivers/Driver.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/testData/drivers/InvalidDriver.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/testData/drivers/ValidDriver.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/testSuites/DriverPortal.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/GTCDriver/validDriverFlowTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GTCDriver/validDriverFlowTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TestRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestRunner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pages/FirstJourneyPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/FirstJourneyPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pages/GTCDriverPortal/FirstJourneyPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/GTCDriverPortal/FirstJourneyPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pages/GTCDriverPortal/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/GTCDriverPortal/LoginPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pages/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/LoginPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pages/PageObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/PageObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/BaseTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/LoginTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/LoginTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -99,6 +104,13 @@
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="selenium_test" type="f1a62948:ProjectNode" />
+                <item name="selenium_test" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="verification" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="selenium_test" type="f1a62948:ProjectNode" />
                 <item name=":main" type="2d1252cf:ModuleNode" />
               </path>
               <path>
@@ -123,76 +135,55 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="validDriverFlowTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/GTCDriver/validDriverFlowTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="203">
-              <caret line="18" column="40" selection-start-line="18" selection-start-column="29" selection-end-line="18" selection-end-column="40" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="driverFlowTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/GTCDriver/driverFlowTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1002#1003#0" expanded="true" />
-                <element signature="e#1034#1035#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="WebDriverInit.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/Helpers/WebDriverInit.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="372">
-              <caret line="26" column="23" selection-start-line="26" selection-start-column="23" selection-end-line="26" selection-end-column="23" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#475#476#0" expanded="true" />
-                <element signature="e#496#497#0" expanded="true" />
-                <element signature="e#611#612#0" expanded="true" />
-                <element signature="e#632#633#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Locators.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/Helpers/Locators/Locators.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="663">
-              <caret line="39" column="50" lean-forward="true" selection-end-line="78" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LoginPage.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/java/Pages/GTCDriverPortal/LoginPage.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="680">
-              <caret line="42" column="57" selection-start-line="42" selection-start-column="48" selection-end-line="42" selection-end-column="57" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1187#1188#0" expanded="true" />
-                <element signature="e#1235#1236#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="PageObject.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/Pages/PageObject.java">
+        <entry file="file://$PROJECT_DIR$/src/test/java/pages/PageObject.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="25" column="5" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#PageObject#0;class#PageObject#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LoginPage.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/pages/LoginPage.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="442">
+              <caret line="38" column="66" selection-start-line="38" selection-start-column="66" selection-end-line="38" selection-end-column="66" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#login#0;class#LoginPage#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FirstJourneyPage.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/pages/FirstJourneyPage.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="238">
-              <caret line="14" column="8" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="8" />
+              <caret line="14" column="53" selection-start-line="14" selection-start-column="53" selection-end-line="14" selection-end-column="53" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LoginTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/tests/LoginTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="10" selection-start-line="10" selection-end-line="10" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -208,6 +199,11 @@
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>tit</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -672,10 +668,20 @@
         <option value="$PROJECT_DIR$/build.gradle" />
         <option value="$PROJECT_DIR$/src/test/java/Helpers/Locators/locators.properties" />
         <option value="$PROJECT_DIR$/src/test/java/Helpers/Locators/Locators.java" />
-        <option value="$PROJECT_DIR$/src/test/java/GTCDriver/driverFlowTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/Helpers/WebDriverInit.java" />
         <option value="$PROJECT_DIR$/src/test/java/Pages/GTCDriverPortal/LoginPage.java" />
         <option value="$PROJECT_DIR$/src/test/java/Pages/PageObject.java" />
+        <option value="$PROJECT_DIR$/src/test/java/pages/GTCDriverPortal/LoginPage.java" />
+        <option value="$PROJECT_DIR$/src/test/java/GTCDriver/driverFlowTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/Backlog/invalidDriverFlowTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/GTCDriver/validDriverFlowTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/TestRunner.java" />
+        <option value="$PROJECT_DIR$/src/test/java/tests/BaseTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/pages/FirstJourneyPage.java" />
+        <option value="$PROJECT_DIR$/src/test/java/tests/LoginTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/pages/PageObject.java" />
+        <option value="$PROJECT_DIR$/src/test/java/pages/LoginPage.java" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -701,58 +707,18 @@
             <path>
               <item name="selenium_test" type="b2602c69:ProjectViewProjectNode" />
               <item name="selenium_test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name=".gradle" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="selenium_test" type="b2602c69:ProjectViewProjectNode" />
+              <item name="selenium_test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name=".gradle" type="462c0819:PsiDirectoryNode" />
+              <item name="4.4" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="selenium_test" type="b2602c69:ProjectViewProjectNode" />
               <item name="selenium_test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-            </path>
-            <path>
-              <item name="selenium_test" type="b2602c69:ProjectViewProjectNode" />
-              <item name="selenium_test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="selenium_test" type="b2602c69:ProjectViewProjectNode" />
-              <item name="selenium_test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-            </path>
-            <path>
-              <item name="selenium_test" type="b2602c69:ProjectViewProjectNode" />
-              <item name="selenium_test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="selenium_test" type="b2602c69:ProjectViewProjectNode" />
-              <item name="selenium_test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="Helpers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="selenium_test" type="b2602c69:ProjectViewProjectNode" />
-              <item name="selenium_test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="Pages" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="selenium_test" type="b2602c69:ProjectViewProjectNode" />
-              <item name="selenium_test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="Pages" type="462c0819:PsiDirectoryNode" />
-              <item name="GTCDriverPortal" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -784,12 +750,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.driverFlowTest">
-    <configuration name="TestRunner" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="TestRunner" />
-      <module name="selenium_test_test" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-    </configuration>
+  <component name="RunManager" selected="JUnit.LoginTest">
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
     </configuration>
@@ -826,6 +787,46 @@
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
+    </configuration>
+    <configuration name="selenium_test [test]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+    </configuration>
+    <configuration name="LoginTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="selenium_test_test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.LoginTest" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -889,17 +890,19 @@
       <listeners />
     </configuration>
     <list>
-      <item itemvalue="Application.TestRunner" />
       <item itemvalue="Gradle.selenium_test [allureReport]" />
       <item itemvalue="Gradle.selenium_test [allureServe]" />
       <item itemvalue="JUnit.driverFlowTest" />
+      <item itemvalue="JUnit.LoginTest" />
+      <item itemvalue="Gradle.selenium_test [test]" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.LoginTest" />
+        <item itemvalue="Gradle.selenium_test [test]" />
         <item itemvalue="JUnit.driverFlowTest" />
         <item itemvalue="Gradle.selenium_test [allureServe]" />
         <item itemvalue="Gradle.selenium_test [allureReport]" />
-        <item itemvalue="Application.TestRunner" />
       </list>
     </recent_temporary>
   </component>
@@ -917,40 +920,39 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="driverFlowTest - 2018.07.16 at 10h 16m 57s.xml">
+    <history-entry file="driverFlowTest - 2018.07.16 at 10h 56m 18s.xml">
       <configuration name="driverFlowTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="driverFlowTest - 2018.07.16 at 10h 18m 23s.xml">
-      <configuration name="driverFlowTest" configurationId="JUnit" />
+    <history-entry file="LoginTest - 2018.07.16 at 12h 17m 53s.xml">
+      <configuration name="LoginTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="driverFlowTest - 2018.07.16 at 10h 18m 58s.xml">
-      <configuration name="driverFlowTest" configurationId="JUnit" />
+    <history-entry file="LoginTest - 2018.07.16 at 12h 18m 38s.xml">
+      <configuration name="LoginTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="driverFlowTest - 2018.07.16 at 10h 21m 18s.xml">
-      <configuration name="driverFlowTest" configurationId="JUnit" />
+    <history-entry file="LoginTest - 2018.07.16 at 12h 19m 25s.xml">
+      <configuration name="LoginTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="driverFlowTest - 2018.07.16 at 10h 22m 52s.xml">
-      <configuration name="driverFlowTest" configurationId="JUnit" />
+    <history-entry file="LoginTest - 2018.07.16 at 12h 20m 31s.xml">
+      <configuration name="LoginTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="driverFlowTest - 2018.07.16 at 10h 27m 02s.xml">
-      <configuration name="driverFlowTest" configurationId="JUnit" />
+    <history-entry file="selenium_test_[test] - 2018.07.16 at 12h 21m 43s.xml">
+      <configuration name="selenium_test [test]" configurationId="GradleRunConfiguration" />
     </history-entry>
-    <history-entry file="driverFlowTest - 2018.07.16 at 10h 29m 00s.xml">
-      <configuration name="driverFlowTest" configurationId="JUnit" />
+    <history-entry file="LoginTest - 2018.07.16 at 12h 32m 55s.xml">
+      <configuration name="LoginTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="driverFlowTest - 2018.07.16 at 10h 32m 21s.xml">
-      <configuration name="driverFlowTest" configurationId="JUnit" />
+    <history-entry file="LoginTest - 2018.07.16 at 12h 34m 12s.xml">
+      <configuration name="LoginTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="driverFlowTest - 2018.07.16 at 10h 32m 54s.xml">
-      <configuration name="driverFlowTest" configurationId="JUnit" />
+    <history-entry file="LoginTest - 2018.07.16 at 12h 43m 03s.xml">
+      <configuration name="LoginTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="driverFlowTest - 2018.07.16 at 10h 45m 39s.xml">
-      <configuration name="driverFlowTest" configurationId="JUnit" />
+    <history-entry file="LoginTest - 2018.07.16 at 13h 32m 39s.xml">
+      <configuration name="LoginTest" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1298" height="1047" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -961,8 +963,8 @@
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.44444445" />
-      <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Terminal" weight="0.32893288" />
+      <window_info anchor="bottom" id="Version Control" weight="0.32893288" />
+      <window_info active="true" anchor="bottom" id="Terminal" visible="true" weight="0.32893288" />
       <window_info id="Capture Tool" />
       <window_info id="Designer" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24959612" />
@@ -989,7 +991,7 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/Pages/GTCDriverPortal/LoginPage.java</url>
+          <url>file://$PROJECT_DIR$/src/test/java/pages/GTCDriverPortal/LoginPage.java</url>
           <line>42</line>
           <properties />
           <option name="timeStamp" value="2" />
@@ -1047,34 +1049,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/invalidDriverFlowTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/TestRunner.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/dockerTest/ChromeTest.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/Backlog/dockerTest/ChromeTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/GTCDriver/validDriverFlowTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="18" column="40" selection-start-line="18" selection-start-column="29" selection-end-line="18" selection-end-column="40" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1092,35 +1070,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/GTCDriver/driverFlowTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1002#1003#0" expanded="true" />
-            <element signature="e#1034#1035#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/Helpers/Locators/locators.properties">
+    <entry file="file://$PROJECT_DIR$/src/test/java/Backlog/Helpers/Locators/locators.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret selection-end-column="15" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/Helpers/Locators/Locators.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/Backlog/Helpers/Locators/Locators.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="663">
           <caret line="39" column="50" lean-forward="true" selection-end-line="78" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/Helpers/WebDriverInit.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/Backlog/Helpers/WebDriverInit.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="372">
+        <state relative-caret-position="442">
           <caret line="26" column="23" selection-start-line="26" selection-start-column="23" selection-end-line="26" selection-end-column="23" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1132,25 +1098,99 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/Pages/PageObject.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/pages/PageObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="25" column="5" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#PageObject#0;class#PageObject#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/Backlog/invalidDriverFlowTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="7" lean-forward="true" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/pages/FirstJourneyPage.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
-          <caret line="14" column="8" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="8" />
+          <caret line="14" column="53" selection-start-line="14" selection-start-column="53" selection-end-line="14" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/GTCDriver/driverFlowTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="36" column="32" selection-start-line="36" selection-start-column="23" selection-end-line="36" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/TestRunner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" lean-forward="true" selection-end-line="16" />
+          <folding>
+            <element signature="e#0#507#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/tests/BaseTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="18" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#694#695#0" expanded="true" />
+            <element signature="e#723#724#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/GTCDriver/validDriverFlowTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="321">
+          <caret line="98" column="7" lean-forward="true" selection-start-line="15" selection-end-line="98" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/pages/GTCDriverPortal/LoginPage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="143">
+          <caret line="21" column="44" selection-start-line="21" selection-start-column="41" selection-end-line="21" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/tests/LoginTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/Pages/GTCDriverPortal/LoginPage.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/pages/LoginPage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="680">
-          <caret line="42" column="57" selection-start-line="42" selection-start-column="48" selection-end-line="42" selection-end-column="57" />
+        <state relative-caret-position="442">
+          <caret line="38" column="66" selection-start-line="38" selection-start-column="66" selection-end-line="38" selection-end-column="66" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1187#1188#0" expanded="true" />
-            <element signature="e#1235#1236#0" expanded="true" />
+            <element signature="method#login#0;class#LoginPage#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
         </state>
       </provider>
     </entry>

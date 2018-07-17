@@ -1,4 +1,4 @@
-package Helpers;
+package Backlog.Helpers;
 
 import org.junit.After;
 import org.junit.AfterClass;

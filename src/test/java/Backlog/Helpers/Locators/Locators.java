@@ -1,4 +1,4 @@
-//package Helpers.Locators;
+//package Backlog.Helpers.Locators;
 //
 //import org.openqa.selenium.By;
 //
