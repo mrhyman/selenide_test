@@ -18,15 +18,17 @@ public class LoginPage extends PageObject {
         super(driver, wait);
     }
 
-    public void openDriverPortal() {
+    public void openLoginPage() {
         driver.get(baseURL);
     }
 
     public void enterEmail(String email) {
+        deleteText(By.id("email"));
         writeText(By.id("email"), email);
     }
 
     public void enterPIN(String pin) {
+        deleteText(By.id("password"));
         writeText(By.id("password"), pin);
     }
 
@@ -40,7 +42,7 @@ public class LoginPage extends PageObject {
     public void login(String email, String pin) {
         enterEmail(email);
         enterPIN(pin);
-        click(By.xpath("/html/body/div[2]/div[1]/form/div[5]/div/span[3]/em[2]/button"));
+        click(By.tagName("button"));
     }
 
     public void verifyLogin() {
@@ -51,7 +53,7 @@ public class LoginPage extends PageObject {
         Assert.assertEquals("greentomatocars - Driver Portal", driver.getTitle());
     }
 
-    public void verifyProtalHeader() {
+    public void verifyPortalHeader() {
         Assert.assertEquals("driver portal", readText(By.className("lgn-online-booking")));
     }
 
@@ -68,6 +70,16 @@ public class LoginPage extends PageObject {
     public void verifyEmailLabel() {
         WebElement label = driver.findElement(By.xpath("/html/body/div[2]/div[1]/form/div[2]/label"));
         Assert.assertEquals("email:", label.getText());
+    }
+
+    public void verifyEmailPlaceholder() {
+        WebElement email = driver.findElement(By.id("email"));
+        Assert.assertTrue(email.getAttribute("placeholder").equals("email"));
+    }
+
+    public void verifyPINPlaceholder() {
+        WebElement email = driver.findElement(By.id("password"));
+        Assert.assertTrue(email.getAttribute("placeholder").equals("PIN"));
     }
 
     public void verifyPINLabel() {
@@ -89,6 +101,11 @@ public class LoginPage extends PageObject {
     public void verifyLoginButtonText() {
         WebElement button = driver.findElement(By.className("button-main"));
         Assert.assertTrue(button.getText().equals("login"));
+    }
+
+    public void verifyErrorMessage() {
+        WebElement message = driver.findElement(By.className("errorMessage"));
+        Assert.assertEquals("Invalid email or password", message.getText());
     }
 
 

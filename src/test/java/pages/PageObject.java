@@ -24,4 +24,8 @@ public class PageObject {
     public String readText(By locator){
         return driver.findElement(locator).getText();
     }
+
+    public void deleteText(By locator) {
+        driver.findElement(locator).clear();
+    }
 }

@@ -11,7 +11,7 @@ public class LoginTest extends BaseTest {
     @BeforeClass
     public static void LoginPageSetup() {
         loginPage = new LoginPage(driver, wait);
-        loginPage.openDriverPortal();
+        loginPage.openLoginPage();
     }
 
     @Test
@@ -21,7 +21,7 @@ public class LoginTest extends BaseTest {
 
     @Test
     public void correctHeadersAreShown() {
-        loginPage.verifyProtalHeader();
+        loginPage.verifyPortalHeader();
         loginPage.verifyFormHeader();
     }
 
@@ -38,13 +38,25 @@ public class LoginTest extends BaseTest {
     }
 
     @Test
+    public void correctPlaceholdersAreShown() {
+        loginPage.verifyEmailPlaceholder();
+        loginPage.verifyPINPlaceholder();
+    }
+
+    @Test
     public void correctFooterIsShown() {
         loginPage.verifyFooter();
     }
 
     @Test
-    public void correntLoginButtonTextIsShown() {
+    public void correctLoginButtonTextIsShown() {
         loginPage.verifyLoginButtonText();
+    }
+
+    @Test
+    public void driverWithWrongCredentialsLogin() {
+        loginPage.login("totalywrong@email.com", "111");
+        loginPage.verifyErrorMessage();
     }
 
     @Test

@@ -18,7 +18,7 @@
 //    private static LoginPage loginPage;
 //
 //    @BeforeClass
-//    public static void openDriverPortal() {
+//    public static void openLoginPage() {
 //        driver = new ChromeDriver();
 //        driver.get("https://192.0.2.67/driver-portal/login");
 //        loginPage = new LoginPage(driver);
