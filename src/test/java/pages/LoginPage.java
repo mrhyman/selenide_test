@@ -1,14 +1,11 @@
 package pages;
 
-import com.codeborne.selenide.impl.WebElementsCollection;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.util.List;
 
 public class LoginPage extends PageObject {
 
@@ -46,7 +43,7 @@ public class LoginPage extends PageObject {
     }
 
     public void verifyLogin() {
-        Assert.assertEquals("VladimirKrasnoSolnishko Ivan", readText(By.className("user-info")));
+        Assert.assertTrue(driver.getCurrentUrl().equals("https://192.0.2.67/driver-portal/"));
     }
 
     public void verifyTitle() {
@@ -107,8 +104,4 @@ public class LoginPage extends PageObject {
         WebElement message = driver.findElement(By.className("errorMessage"));
         Assert.assertEquals("Invalid email or password", message.getText());
     }
-
-
-
-
 }

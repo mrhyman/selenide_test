@@ -62,7 +62,7 @@ public class LoginTest extends BaseTest {
     @Test
     public void driverLogin() {
         loginPage.setRememberMe();
-        loginPage.login("t@t.t", "6474");
+        loginPage.login("t@t.1t", "6474");
         loginPage.verifyLogin();
     }
 }
