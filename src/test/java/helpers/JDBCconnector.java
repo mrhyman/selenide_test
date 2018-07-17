@@ -1,4 +1,4 @@
-//package Backlog.Helpers;
+//package helpers;
 //
 //import java.sql.*;
 //

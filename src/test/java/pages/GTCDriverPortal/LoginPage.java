@@ -1,6 +1,6 @@
 //package pages.GTCDriverPortal;
 //
-////import Backlog.Helpers.Locators.Locators;
+////import helpers.Locators.Locators;
 //import pages.PageObject;
 //import org.openqa.selenium.By;
 //import org.openqa.selenium.WebDriver;
