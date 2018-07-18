@@ -5,4 +5,4 @@ gradle
 out
 .allure
 target
-test/resources/db.yml
+src/test/resources/db.yml
