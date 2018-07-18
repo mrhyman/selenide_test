@@ -4,3 +4,7 @@ connection:
         url: jdbc:sqlserver://192.0.2.142:1433;databaseName=qa_core_67
         user: sa
         password: GaRptING5109
+    server69:
+            url: jdbc:sqlserver://192.0.2.142:1433;databaseName=qa_core_67
+            user: sa
+            password: GaRptING5109
