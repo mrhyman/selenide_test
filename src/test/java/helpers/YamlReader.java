@@ -1,17 +1,25 @@
 package helpers;
 
-import java.io.File;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
+import java.io.IOException;
+import java.io.InputStream;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.Map;
+
+import org.yaml.snakeyaml.Yaml;
 
 public class YamlReader {
-    public static SqlConnection connection = null;
-    public static void getConnection() {
-        ObjectMapper mapper = new ObjectMapper(new YAMLFactory());
-        try {
-            connection = mapper.readValue(new File("app.yml"), SqlConnection.class);
-        } catch (Exception e) {
-            e.printStackTrace();
+
+    public static Map<String, Object> read(String path) throws IOException {
+        InputStream in = Files.newInputStream(Paths.get(path));
+        Yaml yaml = new Yaml();
+        return (Map<String, Object>) yaml.load(in);
+    }
+
+    public static <T> T read(String path, Class<T> c) throws IOException {
+        Yaml yaml = new Yaml();
+        try (InputStream in = Files.newInputStream(Paths.get(path))) {
+            return yaml.loadAs(in, c);
         }
     }
 }

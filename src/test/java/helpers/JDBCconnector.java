@@ -1,12 +1,26 @@
 package helpers;
 
+import java.io.IOException;
 import java.sql.*;
+import java.util.Map;
 
 public class JDBCconnector {
 
-    private static final String url = YamlReader.connection.;
-    private static final String user = SqlConnection.getUser();
-    private static final String password = SqlConnection.getPassword();
+    static Configuration config;
+    static Map<String, String> db;
+
+    static {
+        try {
+            config = YamlReader.read("src/test/resources/db.yml", Configuration.class);
+            db = config.connection.get("server67");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private static final String url = db.get("url");
+    private static final String user = db.get("user");
+    private static final String password = db.get("password");
 
     private static Connection con;
     private static Statement stmt;
@@ -21,6 +35,9 @@ public class JDBCconnector {
             "and   v.status = 0\n" +
             "and   d.depot_id = 4\n" +
             "order by NEWID()\t";
+
+    public JDBCconnector() throws IOException {
+    }
 
     public static String returnValidDriver() {
         String result = "";
