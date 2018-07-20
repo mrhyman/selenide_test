@@ -9,6 +9,7 @@ import org.junit.runner.Description;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -18,7 +19,7 @@ public class BaseTest {
 
     @BeforeClass
     public static void setup () {
-        driver = new FirefoxDriver();
+        driver = new ChromeDriver();
         wait = new WebDriverWait(driver,15);
         driver.manage().window().maximize();
     }

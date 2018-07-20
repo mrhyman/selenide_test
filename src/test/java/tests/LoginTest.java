@@ -1,11 +1,14 @@
 package tests;
 
-import helpers.DriverProvider;
+import helpers.dataProviders.DriverProvider;
 import junitparams.JUnitParamsRunner;
 import junitparams.Parameters;
+import org.junit.After;
 import org.junit.BeforeClass;
+import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.junit.runners.MethodSorters;
 import pages.LoginPage;
 
 @RunWith(JUnitParamsRunner.class)
@@ -60,14 +63,8 @@ public class LoginTest extends BaseTest {
 
     @Test
     @Parameters(source = DriverProvider.class)
-
-//            {
-//            "totalywrong@email.com,111,false",
-//            "t@t.t,6474,true"
-//    })
     public void driverLogin(String driver, Boolean valid) {
         loginPage.login(driver.split(",")[0], driver.split(",")[1]);
         loginPage.verifyLogin(valid);
-
     }
 }

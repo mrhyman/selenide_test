@@ -26,7 +26,7 @@ public class JDBCconnector {
     private static Statement stmt;
     private static ResultSet rs;
 
-    static String query = "select top 1 email, mobileId\n" +
+    public final static String validDriverQuery = "select top 1 email, mobileId\n" +
             "from drivers as d \n" +
             "join vehicles as v on d.vehicle_id = v.id \n" +
             "join individual_emails as im on d.employee_id = im.individual_id\n" +
@@ -36,34 +36,34 @@ public class JDBCconnector {
             "and   d.depot_id = 4\n" +
             "order by NEWID()\t";
 
-    public JDBCconnector() throws IOException {
+    public final static String InvalidDriverQuery = "select top 1 email, mobileId \n" +
+            "from drivers as d \n" +
+            "join individual_emails as im on d.employee_id = im.individual_id\n" +
+            "where d.vehicle_id is null\n" +
+            "order by NEWID()";
+
+    public JDBCconnector() {
     }
 
-    public static String returnValidDriver() {
+    public static String returnDriver(String DriverQuery) {
         String result = "";
 
         try {
-            // opening database connection to MySQL server
-
             con = DriverManager.getConnection(url, user, password);
-
-            // getting Statement object to execute query
             stmt = con.createStatement();
-
-            // executing SELECT query
-            rs = stmt.executeQuery(query);
+            rs = stmt.executeQuery(DriverQuery);
 
             while (rs.next()) {
                 result = rs.getString(1) +
                         "," + rs.getString(2);
             }
+
         } catch (SQLException sqlEx) {
             sqlEx.printStackTrace();
         } finally {
-            //close connection ,stmt and resultset here
-            try { con.close(); } catch(SQLException se) { /*can't do anything */ }
-            try { stmt.close(); } catch(SQLException se) { /*can't do anything */ }
-            try { rs.close(); } catch(SQLException se) { /*can't do anything */ }
+            try { con.close(); } catch(SQLException se) {}
+            try { stmt.close(); } catch(SQLException se) {}
+            try { rs.close(); } catch(SQLException se) {}
         }
         return result;
     }
