@@ -3,6 +3,7 @@
 build
 gradle
 out
+logs
 .allure
 target
 src/test/resources/db.yml

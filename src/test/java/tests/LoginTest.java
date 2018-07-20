@@ -64,6 +64,7 @@ public class LoginTest extends BaseTest {
     @Test
     @Parameters(source = DriverProvider.class)
     public void driverLogin(String driver, Boolean valid) {
+        loginPage.setRememberMe();
         loginPage.login(driver.split(",")[0], driver.split(",")[1]);
         loginPage.verifyLogin(valid);
     }
