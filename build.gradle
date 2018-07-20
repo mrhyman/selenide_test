@@ -2,6 +2,7 @@ group 'selenium_test'
 version '1.0-SNAPSHOT'
 
 apply plugin: 'java'
+apply plugin: 'io.qameta.allure'
 
 sourceCompatibility = 1.8
 
@@ -10,13 +11,14 @@ repositories {
 }
 
 dependencies {
-    testCompile group: 'junit', name: 'junit', version: '4.12'
-    testCompile 'com.codeborne:selenide:4.11.1'
+    compile group: 'junit', name: 'junit', version: '4.12'
     compile group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '2.41.0'
-    testCompile group: 'com.microsoft.sqlserver', name: 'mssql-jdbc', version: '6.4.0.jre8'
-    testCompile 'pl.pragmatists:JUnitParams:1.1.1'
+    compile group: 'com.microsoft.sqlserver', name: 'mssql-jdbc', version: '6.4.0.jre8'
+    compile 'pl.pragmatists:JUnitParams:1.1.1'
     compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.0.1'
     compile group: 'com.fasterxml.jackson.dataformat', name: 'jackson-dataformat-yaml', version: '2.9.6'
+    compile group: 'io.qameta.allure', name: 'allure-junit4', version: '2.7.0'
+    testCompile 'com.codeborne:selenide:4.11.1'
 }
 
 buildscript {
@@ -28,9 +30,19 @@ buildscript {
     }
 }
 
-apply plugin: 'io.qameta.allure'
-
 allure {
     autoconfigure = true
     version = '2.4.1'
+}
+
+jar {
+    manifest {
+        attributes "Main-Class": "TestRunner"
+    }
+    from (configurations.compile.collect { entry -> zipTree(entry) }) {
+        exclude 'META-INF/MANIFEST.MF'
+        exclude 'META-INF/*.SF'
+        exclude 'META-INF/*.DSA'
+        exclude 'META-INF/*.RSA'
+    }
 }
