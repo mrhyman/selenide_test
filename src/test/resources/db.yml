@@ -1,0 +1,8 @@
+# DBConfig parameters
+db:
+    url: jdbc:sqlserver://192.0.2.142:1433;
+    user: sa
+    password: GaRptING5109
+names:
+    server67: databaseName=qa_core_67
+    server69: databaseName=qa_core_67

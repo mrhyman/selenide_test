@@ -8,17 +8,19 @@ public class JDBCconnector {
 
     static Configuration config;
     static Map<String, String> db;
+    static Map<String, String> names;
 
     static {
         try {
             config = YamlReader.read("src/test/resources/db.yml", Configuration.class);
-            db = config.connection.get("server67");
+            db = config.db;
+            names = config.names;
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    private static final String url = db.get("url");
+    private static final String url = db.get("url") + names.get("server67");
     private static final String user = db.get("user");
     private static final String password = db.get("password");
 
