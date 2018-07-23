@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Configuration status="warn" name="TestRunner" packages="">
+<Configuration status="warn" name="Runner" packages="">
     <Appenders>
         <File name="LogFile" fileName="logs/app.log">
             <PatternLayout>
@@ -8,10 +8,7 @@
         </File>
     </Appenders>
     <Loggers>
-        <Root level="error">
-            <AppenderRef ref="LogFile"/>
-        </Root>
-        <Root level="info">
+        <Root level="debug">
             <AppenderRef ref="LogFile"/>
         </Root>
     </Loggers>

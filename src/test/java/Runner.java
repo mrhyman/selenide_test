@@ -5,11 +5,10 @@ import org.junit.runner.Result;
 import org.junit.runner.notification.Failure;
 import tests.LoginTest;
 
-
-public class TestRunner {
+public class Runner {
     public static void main(String[] args) {
         Result result = JUnitCore.runClasses(LoginTest.class);
-        Logger logger = LogManager.getLogger(TestRunner.class);
+        Logger logger = LogManager.getLogger(Runner.class);
 
         for (Failure failure : result.getFailures()) {
             logger.error(failure.toString());
