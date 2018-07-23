@@ -1,8 +1,8 @@
+.allure
 .gradle
 .idea
 build
 gradle
-out
 logs
-.allure
+out
 target
