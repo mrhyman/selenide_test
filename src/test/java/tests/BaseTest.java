@@ -17,14 +17,6 @@ import org.slf4j.LoggerFactory;
 
 public class BaseTest {
     public static WebDriver driver;
-    public static WebDriverWait wait;
-
-    @BeforeClass
-    public static void setup () {
-        driver = new ChromeDriver();
-        wait = new WebDriverWait(driver,15);
-        driver.manage().window().maximize();
-    }
 
     @Rule
     public TestWatcher testWatcher = new TestWatcher() {
@@ -44,11 +36,6 @@ public class BaseTest {
             return;
         }
         saveScreenshot(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES));
-    }
-
-    @AfterClass
-    public static void teardown () {
-        driver.quit();
     }
 }
 

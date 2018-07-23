@@ -1,62 +1,112 @@
-package pages.GTCDriverPortal;//package pages.GTCDriverPortal;
-//
-////import helpers.Locators.Locators;
-//import pages.PageObject;
-//import org.openqa.selenium.By;
-//import org.openqa.selenium.WebDriver;
-//
-//public class LoginPage extends PageObject {
-//
-////    By emailLocator = Locators.get("LoginPage.emailInput");
-////    By pinLocator = Locators.get("LoginPage.pinInput");
-//    By titleLocator = By.xpath("/html/head/title");
-////    By rememberMeLocator = Locators.get("LoginPage.rememberMeCheckBox");
-////    By loginButtonLocator = Locators.get("LoginPage.loginButton");
-//
-//    private final WebDriver driver;
-//
-////    public LoginPage(WebDriver driver) {
-////        super();
-////        this.driver = driver;
-//
-////        if (!Locators.get("LoginPage.title").equals(driver.getTitle())) {
-////            throw new IllegalStateException("This is not the driver portal page");
-////        }
-////    }
-//
-////    public LoginPage enterDriverEmail(String email) {
-////        driver.findElement(emailLocator).sendKeys(email);
-////        return this;
-////    }
-//
-////    public LoginPage enterDriverPin(String pin) {
-////        driver.findElement(pinLocator).sendKeys(pin);
-////        return this;
-////    }
-//
-////    public LoginPage setRememberMe() {
-////        driver.findElement(rememberMeLocator).click();
-////        return this;
-////    }
-//
-//    public String getTitle() {
-//        return driver.findElement(titleLocator).getText();
-//    }
-//
-////    public FirstJourneyPage loginDriver() {
-////        driver.findElement(loginButtonLocator).click();
-////        return new FirstJourneyPage(driver);
-////    }
-////
-////    public LoginPage loginExpectingFailure() {
-////        driver.findElement(loginButtonLocator).click();
-////        return new LoginPage(driver);
-////    }
-////
-////    public FirstJourneyPage loginAs(String email, String pin) {
-////        enterDriverEmail(email);
-////        enterDriverPin(pin);
-////        setRememberMe();
-////        return loginDriver();
-////    }
-//}
+package pages.GTCDriverPortal;
+
+import models.GTCDriver;
+import org.junit.Assert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import pages.PageObject;
+import tests.FirstJourneyTabTest;
+
+public class LoginPage extends PageObject {
+
+    static String baseURL = "https://192.0.2.67/driver-portal/login";
+
+    public LoginPage(WebDriver driver, WebDriverWait wait) {
+        super(driver, wait);
+    }
+
+    public static void openLoginPage() {
+        driver.get(baseURL);
+    }
+
+    public void enterEmail(String email) {
+        deleteText(By.id("email"));
+        writeText(By.id("email"), email);
+    }
+
+    public void enterPIN(String pin) {
+        deleteText(By.id("password"));
+        writeText(By.id("password"), pin);
+    }
+
+    public void setRememberMe() {
+        WebElement checkBox = driver.findElement(By.className("lgn-checkbox-remember"));
+        if (!checkBox.isSelected()) {
+            checkBox.click();
+        }
+    }
+
+    public DriverPortalPage login(GTCDriver gtcDriver) {
+        enterEmail(gtcDriver.getEmail());
+        enterPIN(gtcDriver.getMobileId());
+        click(By.tagName("button"));
+        return new DriverPortalPage(driver, wait, gtcDriver);
+    }
+
+    public void verifyTitle() {
+        Assert.assertEquals("greentomatocars - Driver Portal", driver.getTitle());
+    }
+
+    public void verifyPortalHeader() {
+        Assert.assertEquals("driver portal", readText(By.className("lgn-online-booking")));
+    }
+
+    public void verifyFormHeader() {
+        Assert.assertEquals("please enter email and PIN", readText(By.className("lgn-header-label")));
+    }
+
+    public void verifyLogo() {
+        WebElement ImageFile = driver.findElement(By.tagName("img"));
+        Boolean ImagePresent = (Boolean) ((JavascriptExecutor)driver).executeScript("return arguments[0].complete && typeof arguments[0].naturalWidth != \"undefined\" && arguments[0].naturalWidth > 0", ImageFile);
+        Assert.assertEquals(ImagePresent, true);
+    }
+
+    public void verifyEmailLabel() {
+        WebElement label = driver.findElement(By.xpath("/html/body/div[2]/div[1]/form/div[2]/label"));
+        Assert.assertEquals("email:", label.getText());
+    }
+
+    public void verifyEmailPlaceholder() {
+        WebElement email = driver.findElement(By.id("email"));
+        Assert.assertTrue(email.getAttribute("placeholder").equals("email"));
+    }
+
+    public void verifyPINPlaceholder() {
+        WebElement email = driver.findElement(By.id("password"));
+        Assert.assertTrue(email.getAttribute("placeholder").equals("PIN"));
+    }
+
+    public void verifyPINLabel() {
+        WebElement label = driver.findElement(By.xpath("/html/body/div[2]/div[1]/form/div[3]/label"));
+        Assert.assertEquals("PIN:", label.getText());
+    }
+
+    public void verifyRememberMeLabel() {
+        WebElement label = driver.findElement(By.xpath("/html/body/div[2]/div[1]/form/div[4]/label"));
+        Assert.assertEquals("remember me:", label.getText());
+    }
+
+    public void verifyFooter() {
+        WebElement footer = driver.findElement(By.xpath("/html/body/div[2]/div[2]"));
+        Assert.assertTrue(footer.getText().contains("*if you are having trouble logging in then please contact ") &&
+                footer.getText().contains("driverportal@greentomatocars.com"));
+    }
+
+    public void verifyLoginButtonText() {
+        WebElement button = driver.findElement(By.className("button-main"));
+        Assert.assertTrue(button.getText().equals("login"));
+    }
+
+    public void verifyLogin(Boolean valid) {
+        if (valid) {
+            Assert.assertTrue(driver.getCurrentUrl().equals("https://192.0.2.67/driver-portal/"));
+        } else {
+            WebElement message = driver.findElement(By.className("errorMessage"));
+            Assert.assertEquals("Invalid email or password", message.getText());
+        }
+
+    }
+}

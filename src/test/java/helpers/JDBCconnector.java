@@ -1,5 +1,7 @@
 package helpers;
 
+import models.GTCDriver;
+
 import java.io.IOException;
 import java.sql.*;
 import java.util.Map;
@@ -47,8 +49,8 @@ public class JDBCconnector {
     public JDBCconnector() {
     }
 
-    public static String returnDriver(String DriverQuery) {
-        String result = "";
+    public static GTCDriver returnGTCDriver(String DriverQuery) {
+        GTCDriver gtcDriver = new GTCDriver();
 
         try {
             con = DriverManager.getConnection(url, user, password);
@@ -56,8 +58,8 @@ public class JDBCconnector {
             rs = stmt.executeQuery(DriverQuery);
 
             while (rs.next()) {
-                result = rs.getString(1) +
-                        "," + rs.getString(2);
+                gtcDriver.setEmail(rs.getString(1));
+                gtcDriver.setMobileId(rs.getString(2));
             }
 
         } catch (SQLException sqlEx) {
@@ -67,6 +69,6 @@ public class JDBCconnector {
             try { stmt.close(); } catch(SQLException se) {}
             try { rs.close(); } catch(SQLException se) {}
         }
-        return result;
+        return gtcDriver;
     }
 }

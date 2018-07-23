@@ -1,13 +1,21 @@
-package pages;//package pages;
-//
-//import org.openqa.selenium.WebDriver;
-//import org.openqa.selenium.support.ui.WebDriverWait;
-//
-//public class FirstJourneyPage extends PageObject{
-//    public FirstJourneyPage(WebDriver driver, WebDriverWait wait) {
-//        super(driver, wait);
-//    }
-//
+package pages.GTCDriverPortal;
+
+import models.GTCDriver;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import pages.PageObject;
+
+public class DriverPortalPage extends PageObject {
+
+    public DriverPortalPage(WebDriver driver, WebDriverWait wait, GTCDriver gtcDriver) {
+        super(driver, wait, gtcDriver);
+    }
+
+    public void openPayslipsTab() {
+        click(By.id("tab-1212-btnInnerEl"));
+    }
+
 //    @Test
 //    public void firstJourneyTabIsShownTest() {
 //        $("#tab-1211-btnInnerEl")
@@ -83,4 +91,4 @@ package pages;//package pages;
 //        }
 //        $("#button-1014").shouldHave(text("Select"));
 //    }
-//}
+}

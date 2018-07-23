@@ -1,24 +1,23 @@
 package tests;
 
-import helpers.dataProviders.DriverProvider;
-import junitparams.JUnitParamsRunner;
-import junitparams.Parameters;
-import org.junit.After;
+import models.GTCDriver;
 import org.junit.BeforeClass;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
-import org.junit.runner.RunWith;
 import org.junit.runners.MethodSorters;
-import pages.LoginPage;
+import pages.GTCDriverPortal.LoginPage;
 
-@RunWith(JUnitParamsRunner.class)
+import javax.sound.sampled.Port;
+
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class LoginTest extends BaseTest {
 
-    private static LoginPage loginPage;
+    private static LoginPage loginPage = PortalTest.getLoginPage();
+    private static GTCDriver invalidDriver = PortalTest.getInvalidDriver();
+    private static GTCDriver validDriver = PortalTest.getValidDriver();
 
     @BeforeClass
-    public static void LoginPageSetup() {
-        loginPage = new LoginPage(driver, wait);
+    public static void openLoginPage() {
         loginPage.openLoginPage();
     }
 
@@ -62,10 +61,16 @@ public class LoginTest extends BaseTest {
     }
 
     @Test
-    @Parameters(source = DriverProvider.class)
-    public void driverLogin(String driver, Boolean valid) {
+    public void invalidDriverLogin() {
         loginPage.setRememberMe();
-        loginPage.login(driver.split(",")[0], driver.split(",")[1]);
-        loginPage.verifyLogin(valid);
+        loginPage.login(invalidDriver);
+        loginPage.verifyLogin(false);
+    }
+
+    @Test
+    public void validDriverLogin() {
+        loginPage.setRememberMe();
+        PortalTest.setDriverPortalPage(loginPage.login(validDriver));
+        loginPage.verifyLogin(true);
     }
 }
