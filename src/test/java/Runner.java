@@ -3,8 +3,8 @@ import org.apache.logging.log4j.Logger;
 import org.junit.runner.JUnitCore;
 import org.junit.runner.Result;
 import org.junit.runner.notification.Failure;
-import tests.FirstJourneyTabTest;
-import tests.LoginTest;
+import tests.driverPortal.FirstJourneyTabTest;
+import tests.driverPortal.LoginTest;
 
 public class Runner {
     public static void main(String[] args) {

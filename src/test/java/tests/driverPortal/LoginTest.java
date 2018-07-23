@@ -1,4 +1,4 @@
-package tests;
+package tests.driverPortal;
 
 import models.GTCDriver;
 import org.junit.BeforeClass;
@@ -6,8 +6,7 @@ import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
 import pages.GTCDriverPortal.LoginPage;
-
-import javax.sound.sampled.Port;
+import tests.BaseTest;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class LoginTest extends BaseTest {

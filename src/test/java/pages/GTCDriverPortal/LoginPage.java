@@ -8,9 +8,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.PageObject;
-import tests.FirstJourneyTabTest;
 
-public class LoginPage extends PageObject {
+public class LoginPage extends DriverPortalPage {
 
     static String baseURL = "https://192.0.2.67/driver-portal/login";
 
@@ -46,22 +45,12 @@ public class LoginPage extends PageObject {
         return new DriverPortalPage(driver, wait, gtcDriver);
     }
 
-    public void verifyTitle() {
-        Assert.assertEquals("greentomatocars - Driver Portal", driver.getTitle());
-    }
-
     public void verifyPortalHeader() {
         Assert.assertEquals("driver portal", readText(By.className("lgn-online-booking")));
     }
 
     public void verifyFormHeader() {
         Assert.assertEquals("please enter email and PIN", readText(By.className("lgn-header-label")));
-    }
-
-    public void verifyLogo() {
-        WebElement ImageFile = driver.findElement(By.tagName("img"));
-        Boolean ImagePresent = (Boolean) ((JavascriptExecutor)driver).executeScript("return arguments[0].complete && typeof arguments[0].naturalWidth != \"undefined\" && arguments[0].naturalWidth > 0", ImageFile);
-        Assert.assertEquals(ImagePresent, true);
     }
 
     public void verifyEmailLabel() {
@@ -89,6 +78,7 @@ public class LoginPage extends PageObject {
         Assert.assertEquals("remember me:", label.getText());
     }
 
+    @Override
     public void verifyFooter() {
         WebElement footer = driver.findElement(By.xpath("/html/body/div[2]/div[2]"));
         Assert.assertTrue(footer.getText().contains("*if you are having trouble logging in then please contact ") &&

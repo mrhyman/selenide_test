@@ -1,4 +1,4 @@
-package tests;
+package tests.driverPortal;
 
 import helpers.JDBCconnector;
 import models.GTCDriver;
@@ -11,10 +11,11 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.GTCDriverPortal.DriverPortalPage;
 import pages.GTCDriverPortal.LoginPage;
+import tests.BaseTest;
 
 @RunWith(Suite.class)
 @Suite.SuiteClasses({LoginTest.class, FirstJourneyTabTest.class})
-public class PortalTest {
+public class PortalTest extends BaseTest {
 
     public static WebDriver driver;
     public static WebDriverWait wait;
@@ -97,6 +98,8 @@ public class PortalTest {
     public static void setInvalidDriver(GTCDriver invalidDriver) {
         PortalTest.invalidDriver = invalidDriver;
     }
+
+
 
     @AfterClass
     public static void teardown () {
