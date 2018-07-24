@@ -3,7 +3,6 @@ package pages.GTCDriverPortal;
 import models.GTCDriver;
 import org.junit.Assert;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -20,7 +19,8 @@ public class FirstJourneyTab extends DriverPortalPage {
 
     public void verifyAddress() {
         WebElement address = driver.findElement(By.xpath("//*[@id=\"textfield-1011-inputEl\"]"));
-        Assert.assertEquals(address.getAttribute("value"), this.gtcDriver.getAddress());
+        String expectedAddress = address.getAttribute("value");
+        Assert.assertEquals(expectedAddress, this.gtcDriver.getAddress());
     }
 
     public void verifyAddressLabel() {
