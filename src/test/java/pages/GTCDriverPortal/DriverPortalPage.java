@@ -11,8 +11,13 @@ import pages.PageObject;
 
 public class DriverPortalPage extends PageObject {
 
+    public static String baseURL = "https://192.0.2.67/driver-portal/login";
+
+    private GTCDriver gtcDriver;
+
     public DriverPortalPage(WebDriver driver, WebDriverWait wait, GTCDriver gtcDriver) {
         super(driver, wait, gtcDriver);
+        this.gtcDriver = gtcDriver;
     }
 
     public DriverPortalPage(WebDriver driver, WebDriverWait wait) {
@@ -34,11 +39,19 @@ public class DriverPortalPage extends PageObject {
     }
 
     public void verifyFooter() {
-        WebElement footer = driver.findElement(By.xpath("//*[@id=\"ext-gen1019\"]/div[4]"));
-        Assert.assertTrue(footer.getText().contains("If you have any questions please email us at ") &&
-                footer.getText().contains("driverportal@greentomatocars.com") &&
-                footer.getText().contains("Copyright © 2018 greentomatocars")
-            );
+        WebElement leftFooter = driver.findElement(By.className("page-footer-left"));
+        WebElement rightFooter = driver.findElement(By.className("page-footer-right"));
+        Assert.assertTrue(leftFooter.getText().contains("If you have any questions please email us at") &&
+                leftFooter.getText().contains("driverportal@greentomatocars.com") &&
+                rightFooter.getText().contains("Copyright © 2018 greentomatocars"));
+    }
+
+    public void verifyLogoutButton() {
+        Assert.assertEquals("Logout", driver.findElement(By.className("logout-link")).getText());
+    }
+
+    public void verifyDriverName() {
+        Assert.assertEquals(gtcDriver.getEmail(), driver.findElement(By.className("user-info")).getText());
     }
 
 

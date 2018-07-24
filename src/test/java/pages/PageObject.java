@@ -7,7 +7,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class PageObject {
     protected static WebDriver driver;
-    protected WebDriverWait wait;
+    protected static WebDriverWait wait;
 
     public PageObject(WebDriver driver, WebDriverWait wait) {
         this.driver = driver;

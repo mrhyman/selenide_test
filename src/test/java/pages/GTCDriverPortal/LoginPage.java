@@ -11,14 +11,13 @@ import pages.PageObject;
 
 public class LoginPage extends DriverPortalPage {
 
-    static String baseURL = "https://192.0.2.67/driver-portal/login";
-
     public LoginPage(WebDriver driver, WebDriverWait wait) {
         super(driver, wait);
     }
 
-    public static void openLoginPage() {
+    public void openLoginPage() {
         driver.get(baseURL);
+        wait.until(webDriver -> ((JavascriptExecutor) webDriver).executeScript("return document.readyState").equals("complete"));
     }
 
     public void enterEmail(String email) {
@@ -42,6 +41,7 @@ public class LoginPage extends DriverPortalPage {
         enterEmail(gtcDriver.getEmail());
         enterPIN(gtcDriver.getMobileId());
         click(By.tagName("button"));
+        wait.until(webDriver -> ((JavascriptExecutor) webDriver).executeScript("return document.readyState").equals("complete"));
         return new DriverPortalPage(driver, wait, gtcDriver);
     }
 

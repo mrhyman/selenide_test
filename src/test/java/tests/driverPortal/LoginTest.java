@@ -1,24 +1,12 @@
 package tests.driverPortal;
 
-import models.GTCDriver;
-import org.junit.BeforeClass;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
-import pages.GTCDriverPortal.LoginPage;
 import tests.BaseTest;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class LoginTest extends BaseTest {
-
-    private static LoginPage loginPage = PortalTest.getLoginPage();
-    private static GTCDriver invalidDriver = PortalTest.getInvalidDriver();
-    private static GTCDriver validDriver = PortalTest.getValidDriver();
-
-    @BeforeClass
-    public static void openLoginPage() {
-        loginPage.openLoginPage();
-    }
 
     @Test
     public void correctTitleIsShown() {
@@ -69,7 +57,7 @@ public class LoginTest extends BaseTest {
     @Test
     public void validDriverLogin() {
         loginPage.setRememberMe();
-        PortalTest.setDriverPortalPage(loginPage.login(validDriver));
+        loginPage.login(validDriver);
         loginPage.verifyLogin(true);
     }
 }

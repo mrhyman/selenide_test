@@ -2,16 +2,16 @@ package tests.driverPortal;
 
 import org.junit.Assert;
 
+import org.junit.BeforeClass;
 import org.junit.Test;
-import org.openqa.selenium.WebDriver;
-import pages.GTCDriverPortal.DriverPortalPage;
 import tests.BaseTest;
-
 
 public class FirstJourneyTabTest extends BaseTest {
 
-    private static DriverPortalPage driverPortalPage = PortalTest.getDriverPortalPage();
-    private static WebDriver driver = PortalTest.getDriver();
+    @BeforeClass
+    public static void openPortalPage() {
+        driverPortalPage = loginPage.login(validDriver);
+    }
 
     @Test
     public void openPayslipsTab() {
@@ -27,5 +27,15 @@ public class FirstJourneyTabTest extends BaseTest {
     @Test
     public void correctFooterIsShown() {
         driverPortalPage.verifyFooter();
+    }
+
+    @Test
+    public void logoutButtonIsShown() {
+        driverPortalPage.verifyLogoutButton();
+    }
+
+    @Test
+    public void correctDriverNameIsShown() {
+        driverPortalPage.verifyDriverName();
     }
 }
