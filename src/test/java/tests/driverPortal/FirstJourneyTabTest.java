@@ -75,6 +75,16 @@ public class FirstJourneyTabTest extends BaseTest {
         firstJourneyTab.verifyTabs();
     }
 
+    @Test
+    public void jobsTableIsShown() {
+        firstJourneyTab.verifyJobsTable();
+    }
+
+    @Test
+    public void correctJobsTableTitleIsShown() {
+        firstJourneyTab.verifyJobsTableTitle();
+    }
+
     //    @Test
 //    public void firstJourneyTabIsShownTest() {
 //        $("#tab-1211-btnInnerEl")
