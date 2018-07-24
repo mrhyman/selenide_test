@@ -15,7 +15,8 @@ public class PageObject {
     }
 
     public PageObject(WebDriver driver, WebDriverWait wait, GTCDriver gtcDriver) {
-
+        this.driver = driver;
+        this.wait = wait;
     }
 
     public void click(By locator) {

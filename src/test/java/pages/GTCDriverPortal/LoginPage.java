@@ -7,7 +7,6 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import pages.PageObject;
 
 public class LoginPage extends DriverPortalPage {
 
@@ -37,12 +36,12 @@ public class LoginPage extends DriverPortalPage {
         }
     }
 
-    public DriverPortalPage login(GTCDriver gtcDriver) {
+    public FirstJourneyTab login(GTCDriver gtcDriver) {
         enterEmail(gtcDriver.getEmail());
         enterPIN(gtcDriver.getMobileId());
         click(By.tagName("button"));
         wait.until(webDriver -> ((JavascriptExecutor) webDriver).executeScript("return document.readyState").equals("complete"));
-        return new DriverPortalPage(driver, wait, gtcDriver);
+        return new FirstJourneyTab(driver, wait, gtcDriver);
     }
 
     public void verifyPortalHeader() {

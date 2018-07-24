@@ -9,19 +9,21 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.PageObject;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class DriverPortalPage extends PageObject {
 
     public static String baseURL = "https://192.0.2.67/driver-portal/login";
-
-    private GTCDriver gtcDriver;
-
-    public DriverPortalPage(WebDriver driver, WebDriverWait wait, GTCDriver gtcDriver) {
-        super(driver, wait, gtcDriver);
-        this.gtcDriver = gtcDriver;
-    }
+    public GTCDriver gtcDriver;
 
     public DriverPortalPage(WebDriver driver, WebDriverWait wait) {
         super(driver, wait);
+    }
+
+    public DriverPortalPage(WebDriver driver, WebDriverWait wait, GTCDriver gtcDriver) {
+        super(driver, wait);
+        this.gtcDriver = gtcDriver;
     }
 
     public void openTab(String tabName) {
@@ -51,84 +53,25 @@ public class DriverPortalPage extends PageObject {
     }
 
     public void verifyDriverName() {
-        Assert.assertEquals(gtcDriver.getEmail(), driver.findElement(By.className("user-info")).getText());
+        Assert.assertEquals(gtcDriver.getFullName(), driver.findElement(By.className("user-info")).getText());
     }
 
+    public void verifyTabs() {
+        List<String> expectedTabs = new ArrayList<String>(6);
+        expectedTabs.add("First Journey");
+        expectedTabs.add("Payslips");
+        expectedTabs.add("Not Paid Jobs");
+        expectedTabs.add("Availability");
+        expectedTabs.add("Work time report");
+        expectedTabs.add("Profile");
 
+        List<WebElement> tabs = driver.findElements(By.className("x-tab-wrap"));
 
-//    @Test
-//    public void firstJourneyTabIsShownTest() {
-//        $("#tab-1211-btnInnerEl")
-//                .shouldBe(Condition.visible)
-//                .shouldHave(text("First Journey"));
-//    }
+        Assert.assertTrue(tabs.size() == expectedTabs.size());
 
-//    @Test
-//    public void firstPayslipsTabIsShownTest() {
-//        $("#tab-1212-btnInnerEl")
-//                .shouldBe(Condition.visible)
-//                .shouldHave(text("Payslips"));
-//    }
-//
-//    @Test
-//    public void firstNotPaidJobsTabIsShownTest() {
-//        $("#tab-1213-btnInnerEl")
-//                .shouldBe(Condition.visible)
-//                .shouldHave(text("Not Paid Jobs"));
-//    }
-//
-//    @Test
-//    public void firstAvailabilityTabIsShownTest() {
-//        $("#tab-1214-btnInnerEl")
-//                .shouldBe(Condition.visible)
-//                .shouldHave(text("Availability"));
-//    }
-//
-//    @Test
-//    public void firstWorkTimeReportTabIsShownTest() {
-//        $("#tab-1215-btnInnerEl")
-//                .shouldBe(Condition.visible)
-//                .shouldHave(text("Work time report"));
-//    }
-//
-//    @Test
-//    public void profileTabIsShownTest() {
-//        $("#tab-1216-btnInnerEl")
-//                .shouldBe(Condition.visible)
-//                .shouldHave(text("Profile"));
-//    }
-//
-//    @Test
-//    public void driverAddressIsShownTest() {
-//        $("#textfield-1011-inputEl")
-//                .shouldBe(Condition.visible)
-//                .shouldNotBe(Condition.empty);
-//    }
-//
-//    @Test
-//    public void driverNextShiftIsShownTest() {
-//        $("#textfield-1012-inputEl")
-//                .shouldBe(Condition.visible)
-//                .shouldNotBe(Condition.empty);
-//    }
-//
-//    @Test
-//    public void mapIsShownTest() {
-//        $("#mapFrame").shouldBe(Condition.visible);
-//    }
-//
-//    @Test
-//    public void jobsTableIsShown() {
-//        $("#panel-1013").shouldBe(visible);
-//    }
-//
-//    @Test
-//    public void selectFirstJobButtonIsShownTest() {
-//        if (getElements(By.className("x-grid-row")).size() > 0) {
-//            $("#button-1014").shouldNotHave(cssClass("x-btn-disabled"));
-//        } else {
-//            $("#button-1014").shouldHave(cssClass("x-btn-disabled"));
-//        }
-//        $("#button-1014").shouldHave(text("Select"));
-//    }
+        for(int i = 0; i < tabs.size();  i++) {
+            Assert.assertEquals(expectedTabs.get(i), tabs.get(i).getText());
+        }
+
+    }
 }

@@ -33,8 +33,9 @@ public class BaseTest {
         wait = new WebDriverWait(driver,10);
         driver.manage().window().maximize();
 
-        validDriver = JDBCconnector.returnGTCDriver(JDBCconnector.validDriverQuery);
-        invalidDriver = JDBCconnector.returnGTCDriver(JDBCconnector.InvalidDriverQuery);
+        validDriver = JDBCconnector.getGTCDriver(JDBCconnector.validDriverQuery);
+        JDBCconnector.getAddress(validDriver);
+        invalidDriver = JDBCconnector.getGTCDriver(JDBCconnector.invalidDriverQuery);
 
         loginPage = new LoginPage(driver, wait);
         loginPage.openLoginPage();
