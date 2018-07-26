@@ -31,7 +31,7 @@ public class JDBCconnector {
     private static ResultSet rs;
 
     public final static String validDriverQuery =
-            "select top 1 email, mobileId, fullName, home_address_id, useDepotAddress\n" +
+            "select top 1 d.employee_id, email, mobileId, fullName, home_address_id, useDepotAddress\n" +
                     "from drivers as d \n" +
                     "join vehicles as v on d.vehicle_id = v.id \n" +
                     "join individual_emails as im on d.employee_id = im.individual_id\n" +
@@ -43,7 +43,7 @@ public class JDBCconnector {
                     "order by NEWID()";
 
     public final static String invalidDriverQuery =
-            "select top 1 email, mobileId \n" +
+            "select top 1 d.employee_id, email, mobileId \n" +
             "from drivers as d \n" +
             "join individual_emails as im on d.employee_id = im.individual_id\n" +
             "where d.vehicle_id is null\n" +
@@ -56,6 +56,19 @@ public class JDBCconnector {
     public final static String driverAddress =
             "select fullStr from addresses where id=";
 
+    public final static String driverCalendar =
+            "declare @startDate datetime\n" +
+            "set @startDate = DATEADD(MONTH, -6, getdate())\n" +
+            "declare @stopDate datetime\n" +
+            "set @stopDate = DATEADD(MONTH, 6, getdate())\n" +
+            "select CONVERT(varchar, calendar, 103), startTime, endTime\n" +
+            "from driver_working_calendars \n" +
+            "where working_week_id in (\n" +
+            "select id from driver_working_weeks \n" +
+            "where driver_id = 311263\n" +
+            "and active = 1\n" +
+            "and calendar between @startDate and @stopDate)";
+
     public static GTCDriver getGTCDriver(String driverQuery) {
         GTCDriver gtcDriver = new GTCDriver();
 
@@ -65,12 +78,13 @@ public class JDBCconnector {
             rs = stmt.executeQuery(driverQuery);
 
             while (rs.next()) {
-                gtcDriver.setEmail(rs.getString(1));
-                gtcDriver.setMobileId(rs.getString(2));
+                gtcDriver.setId(rs.getInt(1));
+                gtcDriver.setEmail(rs.getString(2));
+                gtcDriver.setMobileId(rs.getString(3));
                 if (driverQuery.contains("preventAllocation = 0")) {
-                    gtcDriver.setFullName(rs.getString(3));
-                    gtcDriver.setAddress(rs.getString(4));
-                    gtcDriver.setUseDepotAddress(new Boolean(rs.getString(5)));
+                    gtcDriver.setFullName(rs.getString(4));
+                    gtcDriver.setAddress(rs.getString(5));
+                    gtcDriver.setUseDepotAddress(new Boolean(rs.getString(6)));
                 }
             }
         } catch (SQLException sqlEx) {
@@ -103,5 +117,9 @@ public class JDBCconnector {
             try { stmt.close(); } catch(SQLException se) {}
             try { rs.close(); } catch(SQLException se) {}
         }
+    }
+
+    public static void getDriverCalendar(String driverQuery) {
+
     }
 }

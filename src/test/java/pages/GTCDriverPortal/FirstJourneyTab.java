@@ -7,6 +7,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class FirstJourneyTab extends DriverPortalPage {
     public FirstJourneyTab(WebDriver driver, WebDriverWait wait, GTCDriver gtcDriver) {
         super(driver, wait, gtcDriver);
@@ -30,7 +33,7 @@ public class FirstJourneyTab extends DriverPortalPage {
 
     public void verifyCurrentShift() {
         WebElement shift = driver.findElement(By.xpath("//*[@id=\"textfield-1012-inputEl\"]"));
-        Assert.assertEquals(shift.getText(), this.gtcDriver.getEmail());
+        Assert.assertTrue(shift != null);
     }
 
     public void verifyCurrentShiftLabel() {
@@ -46,6 +49,50 @@ public class FirstJourneyTab extends DriverPortalPage {
     public void verifyJobsTableTitle() {
         WebElement tableTitle = driver.findElement(By.xpath("//*[@id=\"fieldset-1227-legendTitle\"]"));
         Assert.assertEquals("Available jobs", tableTitle.getText());
+    }
+
+    public void verifyJobsTableHeaders() {
+        List<String> expectedHeaders = new ArrayList<String>(4);
+        expectedHeaders.add("Reference");
+        expectedHeaders.add("PU postcode");
+        expectedHeaders.add("PU date/time");
+        expectedHeaders.add("Distance, mi");
+
+        List<WebElement> headers = driver.findElements(By.className("x-column-header-text"));
+
+        Assert.assertTrue(headers.size() == expectedHeaders.size());
+
+        for(int i = 0; i < headers.size();  i++) {
+            Assert.assertEquals(expectedHeaders.get(i), headers.get(i).getText());
+        }
+    }
+
+    public boolean verifySelectButton() {
+        List<WebElement> jobs = driver.findElements(By.className("x-grid-row"));
+        WebElement selectButton = driver.findElement(By.id("button-1014"));
+
+        if (jobs != null && jobs.size() > 0) {
+            Assert.assertTrue(!selectButton.getAttribute("class").contains("x-btn-disabled"));
+            return true;
+        } else {
+            Assert.assertTrue(selectButton.getAttribute("class").contains("x-btn-disabled"));
+            return false;
+        }
+    }
+
+    public void selectJob() {
+        List<WebElement> jobs = driver.findElements(By.className("x-grid-row"));
+        WebElement job = jobs.get((int) Math.random()*jobs.size());
+        if (jobs != null && jobs.size() > 0) {
+            click(By.id("gridview-1226-record-" + job.getAttribute("data-recordid")));
+            click(By.id("button-1014-btnIconEl"));
+            click(By.id("button-1006-btnIconEl"));
+        }
+    }
+
+    public void verifySelectedJobTableHeader() {
+        WebElement tableHeader = driver.findElement(By.id("fieldset-1235-legendTitle"));
+        Assert.assertTrue(tableHeader != null);
     }
 
 }

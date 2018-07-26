@@ -1,11 +1,13 @@
 package models;
 
 public class GTCDriver {
+    private int id;
     private String email;
     private String mobileId;
     private String fullName;
     private String address;
     private boolean useDepotAddress;
+    private DriverCalendar calendar;
 
     public String getEmail() {
         return email;
@@ -45,5 +47,13 @@ public class GTCDriver {
 
     public void setUseDepotAddress(boolean useDepotAddress) {
         this.useDepotAddress = useDepotAddress;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }

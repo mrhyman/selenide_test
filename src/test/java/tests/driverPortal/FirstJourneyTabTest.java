@@ -1,9 +1,24 @@
 package tests.driverPortal;
 
+import org.apache.http.HttpResponse;
+import org.apache.http.client.CookieStore;
+import org.apache.http.client.ResponseHandler;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.conn.ssl.NoopHostnameVerifier;
+import org.apache.http.cookie.Cookie;
+import org.apache.http.impl.client.BasicCookieStore;
+import org.apache.http.impl.client.BasicResponseHandler;
+import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.http.impl.client.HttpClients;
+import org.apache.http.impl.cookie.BasicClientCookie;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import pages.GTCDriverPortal.FirstJourneyTab;
 import tests.BaseTest;
+
+import java.io.IOException;
+import java.util.Iterator;
+import java.util.Set;
 
 public class FirstJourneyTabTest extends BaseTest {
 
@@ -13,12 +28,6 @@ public class FirstJourneyTabTest extends BaseTest {
     public static void openPortalPage() {
         firstJourneyTab = loginPage.login(validDriver);
     }
-
-//    @Test
-//    public void openPayslipsTab() {
-//        driverPortalPage.openTab("Payslips");
-//        Assert.assertTrue(driver.getCurrentUrl().equals("https://192.0.2.67/driver-portal/#week-statements"));
-//    }
 
     @Test
     public void logoIsShown() {
@@ -56,7 +65,7 @@ public class FirstJourneyTabTest extends BaseTest {
     }
 
     @Test
-    public void correctDriverShiftIsShown() {
+    public void driverShiftIsShown() {
         firstJourneyTab.verifyCurrentShift();
     }
 
@@ -85,79 +94,64 @@ public class FirstJourneyTabTest extends BaseTest {
         firstJourneyTab.verifyJobsTableTitle();
     }
 
-    //    @Test
-//    public void firstJourneyTabIsShownTest() {
-//        $("#tab-1211-btnInnerEl")
-//                .shouldBe(Condition.visible)
-//                .shouldHave(text("First Journey"));
-//    }
+    @Test
+    public void correctJobsTableHeadersAreShown() {
+        firstJourneyTab.verifyJobsTableHeaders();
+    }
 
-//    @Test
-//    public void firstPayslipsTabIsShownTest() {
-//        $("#tab-1212-btnInnerEl")
-//                .shouldBe(Condition.visible)
-//                .shouldHave(text("Payslips"));
-//    }
+    @Test
+    public void selectButtonIsShown() {
+        firstJourneyTab.verifySelectButton();
+    }
+
+    @Test
+    public void selectFirstJobTest() {
+        if(firstJourneyTab.verifySelectButton()) {
+            firstJourneyTab.selectJob();
+            firstJourneyTab.verifySelectedJobTableHeader();
+        } else {
+
+        }
+    }
+
+    @Test
+    public void testGetSingleUserProgrammatic() throws IOException {
+        CookieStore httpCookieStore = new BasicCookieStore();
+        Set<org.openqa.selenium.Cookie> driverCookies = driver.manage().getCookies();
+        Iterator iterator = driverCookies.iterator();
+        while (iterator.hasNext()) {
+            org.openqa.selenium.Cookie driverCookie = (org.openqa.selenium.Cookie) iterator.next();
+            Cookie cookie = new BasicClientCookie(driverCookie.getName(), driverCookie.getValue());
+            httpCookieStore.addCookie(cookie);
+        }
+
+        CloseableHttpClient httpClient = HttpClients
+                .custom()
+                .setSSLHostnameVerifier(NoopHostnameVerifier.INSTANCE)
+                .setDefaultCookieStore(httpCookieStore)
+                .build();
+        HttpGet httpGet = new HttpGet("https://192.0.2.67/driver-portal/api/jobSelection/jobFilter");
+
+        iterator = httpCookieStore.getCookies().iterator();
+        while (iterator.hasNext()) {
+            System.out.println(iterator.next());
+        }
+
+        HttpResponse response = httpClient.execute(httpGet);
+
+
+        System.out.println("----------------------------------------------------");
+
+//        Set<Cookie> cookies= driver.manage().getCookies();
+//        iterator = cookies.iterator();
+//        while (iterator.hasNext()) {
+//            System.out.println(iterator.next());
 //
-//    @Test
-//    public void firstNotPaidJobsTabIsShownTest() {
-//        $("#tab-1213-btnInnerEl")
-//                .shouldBe(Condition.visible)
-//                .shouldHave(text("Not Paid Jobs"));
-//    }
-//
-//    @Test
-//    public void firstAvailabilityTabIsShownTest() {
-//        $("#tab-1214-btnInnerEl")
-//                .shouldBe(Condition.visible)
-//                .shouldHave(text("Availability"));
-//    }
-//
-//    @Test
-//    public void firstWorkTimeReportTabIsShownTest() {
-//        $("#tab-1215-btnInnerEl")
-//                .shouldBe(Condition.visible)
-//                .shouldHave(text("Work time report"));
-//    }
-//
-//    @Test
-//    public void profileTabIsShownTest() {
-//        $("#tab-1216-btnInnerEl")
-//                .shouldBe(Condition.visible)
-//                .shouldHave(text("Profile"));
-//    }
-//
-//    @Test
-//    public void driverAddressIsShownTest() {
-//        $("#textfield-1011-inputEl")
-//                .shouldBe(Condition.visible)
-//                .shouldNotBe(Condition.empty);
-//    }
-//
-//    @Test
-//    public void driverNextShiftIsShownTest() {
-//        $("#textfield-1012-inputEl")
-//                .shouldBe(Condition.visible)
-//                .shouldNotBe(Condition.empty);
-//    }
-//
-//    @Test
-//    public void mapIsShownTest() {
-//        $("#mapFrame").shouldBe(Condition.visible);
-//    }
-//
-//    @Test
-//    public void jobsTableIsShown() {
-//        $("#panel-1013").shouldBe(visible);
-//    }
-//
-//    @Test
-//    public void selectFirstJobButtonIsShownTest() {
-//        if (getElements(By.className("x-grid-row")).size() > 0) {
-//            $("#button-1014").shouldNotHave(cssClass("x-btn-disabled"));
-//        } else {
-//            $("#button-1014").shouldHave(cssClass("x-btn-disabled"));
 //        }
-//        $("#button-1014").shouldHave(text("Select"));
-//    }
+
+        ResponseHandler<String> handler = new BasicResponseHandler();
+        String body = handler.handleResponse(response);
+        int code = response.getStatusLine().getStatusCode();
+        System.out.println(body + " ; " + code);
+    }
 }

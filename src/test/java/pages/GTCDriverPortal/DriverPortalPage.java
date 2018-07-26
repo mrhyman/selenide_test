@@ -72,6 +72,5 @@ public class DriverPortalPage extends PageObject {
         for(int i = 0; i < tabs.size();  i++) {
             Assert.assertEquals(expectedTabs.get(i), tabs.get(i).getText());
         }
-
     }
 }
