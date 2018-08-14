@@ -2,7 +2,6 @@ package tests;
 
 import helpers.JDBCconnector;
 import io.qameta.allure.Attachment;
-import io.restassured.RestAssured;
 import models.GTCDriver;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
