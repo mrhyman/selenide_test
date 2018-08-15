@@ -10,6 +10,7 @@
 
     <properties>
         <aspectj.version>1.8.10</aspectj.version>
+        <serverIP>67</serverIP>
     </properties>
 
     <dependencies>
@@ -70,7 +71,29 @@
         </dependency>
     </dependencies>
 
+    <profiles>
+        <profile>
+            <id>67server</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <build.profile.id>67server</build.profile.id>
+            </properties>
+        </profile>
+        <profile>
+            <id>64server</id>
+            <properties>
+                <build.profile.id>64server</build.profile.id>
+            </properties>
+        </profile>
+    </profiles>
+
     <build>
+        <filters>
+            <filter>profiles/${build.profile.id}/config.properties</filter>
+        </filters>
+
         <plugins>
             <plugin>
                 <groupId>io.qameta.allure</groupId>
@@ -144,6 +167,9 @@
                     <descriptors>
                         <descriptor>src/main/assembly/test-jar-with-dependencies.xml</descriptor>
                     </descriptors>
+                    <finalName>Test-${build.profile.id}</finalName>
+                    <appendAssemblyId>false</appendAssemblyId>
+                    <outputDirectory>${project.basedir}</outputDirectory>
                 </configuration>
                 <executions>
                     <execution>
@@ -155,6 +181,13 @@
                 </executions>
             </plugin>
         </plugins>
+
+        <resources>
+            <resource>
+                <filtering>true</filtering>
+                <directory>src/main/resources</directory>
+            </resource>
+        </resources>
     </build>
 
     <reporting>

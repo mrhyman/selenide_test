@@ -14,9 +14,16 @@ public class TestRunner {
                         LoginTest.class,
                         FirstJourneyTabTest.class
                 );
-        for (final Failure failure : result.getFailures()) {
-            System.out.println(failure.toString());
+
+        Logger logger = LogManager.getLogger(Runner.class);
+        for (Failure failure : result.getFailures()) {
+            logger.error(failure.toString());
         }
-        System.out.println(result.wasSuccessful());
+
+        if (result.wasSuccessful()) {
+            logger.info("Testrun was successful! It took " + result.getRunTime()/1000 + " sec");
+        } else {
+            logger.info("Testrun failed");
+        }
     }
 }
