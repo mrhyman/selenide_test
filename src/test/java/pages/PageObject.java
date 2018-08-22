@@ -14,11 +14,6 @@ public class PageObject {
         this.wait = wait;
     }
 
-    public PageObject(WebDriver driver, WebDriverWait wait, GTCDriver gtcDriver) {
-        this.driver = driver;
-        this.wait = wait;
-    }
-
     public void click(By locator) {
         driver.findElement(locator).click();
     }

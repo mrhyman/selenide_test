@@ -1,5 +1,6 @@
 package tests.driverPortal;
 
+import helpers.JDBCconnector;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import pages.GTCDriverPortal.FirstJourneyTab;
@@ -11,7 +12,14 @@ public class FirstJourneyTabTest extends BaseTest {
 
     @BeforeClass
     public static void openPortalPage() {
-        firstJourneyTab = loginPage.login(validDriver);
+        validDriver = JDBCconnector.getGTCDriver(JDBCconnector.validDriverQuery);
+        JDBCconnector.getAddress(validDriver);
+
+        firstJourneyTab = new FirstJourneyTab(driver, wait, validDriver);
+        firstJourneyTab.openDriverPortalPage(validDriver);
+
+        logger.info(validDriver.getMobileId() + " - " + validDriver.getFullName() + " driver is logged in");
+        logger.info("*** First Journey tab test suite started! ***");
     }
 
     @Test
@@ -19,10 +27,10 @@ public class FirstJourneyTabTest extends BaseTest {
         firstJourneyTab.verifyLogo();
     }
 
-//    @Test
-//    public void correctFooterIsShown() {
-//        firstJourneyTab.verifyFooter();
-//    }
+    @Test
+    public void correctFooterIsShown() {
+        firstJourneyTab.verifyFooter();
+    }
 
     @Test
     public void logoutButtonIsShown() {
@@ -50,7 +58,7 @@ public class FirstJourneyTabTest extends BaseTest {
     }
 
     @Test
-    public void driverShiftIsShown() {
+    public void driverShiftFieldIsNotEmpty() {
         firstJourneyTab.verifyCurrentShift();
     }
 
@@ -88,14 +96,4 @@ public class FirstJourneyTabTest extends BaseTest {
     public void selectButtonIsShown() {
         firstJourneyTab.verifySelectButton();
     }
-
-//    @Test
-//    public void selectFirstJobTest() {
-//        if(firstJourneyTab.verifySelectButton()) {
-//            firstJourneyTab.selectJob();
-//            firstJourneyTab.verifySelectedJobTableHeader();
-//        } else {
-//
-//        }
-//    }
 }

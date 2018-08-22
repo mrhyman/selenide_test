@@ -1,8 +1,9 @@
 package tests;
 
-import helpers.JDBCconnector;
 import io.qameta.allure.Attachment;
 import models.GTCDriver;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Rule;
@@ -15,6 +16,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.GTCDriverPortal.DriverPortalPage;
 import pages.GTCDriverPortal.LoginPage;
+import tests.driverPortal.LoginTest;
 
 public class BaseTest {
 
@@ -26,19 +28,14 @@ public class BaseTest {
     protected static GTCDriver validDriver;
     protected static GTCDriver invalidDriver;
 
+    public static Logger logger = LogManager.getLogger(LoginTest.class);
+
     @BeforeClass
     public static void setup() {
 
         driver = new ChromeDriver();
         wait = new WebDriverWait(driver,10);
         driver.manage().window().maximize();
-
-        validDriver = JDBCconnector.getGTCDriver(JDBCconnector.validDriverQuery);
-        JDBCconnector.getAddress(validDriver);
-        invalidDriver = JDBCconnector.getGTCDriver(JDBCconnector.invalidDriverQuery);
-
-        loginPage = new LoginPage(driver, wait);
-        loginPage.openLoginPage();
     }
 
     public static WebDriver getDriver() {
@@ -98,7 +95,13 @@ public class BaseTest {
     public TestWatcher testWatcher = new TestWatcher() {
         @Override
         protected void failed(Throwable e, Description description) {
+            logger.error(description);
             screenshot();
+        }
+
+        @Override
+        protected void succeeded(Description description) {
+            logger.info(description + " - success!");
         }
     };
 

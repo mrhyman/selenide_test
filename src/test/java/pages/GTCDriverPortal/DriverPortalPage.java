@@ -14,7 +14,7 @@ import java.util.List;
 
 public class DriverPortalPage extends PageObject {
 
-    public static String baseURL = "https://192.0.2.67/driver-portal/login";
+    public static String baseURL = "https://192.0.2.67/driver-portal";
     public GTCDriver gtcDriver;
 
     public DriverPortalPage(WebDriver driver, WebDriverWait wait) {
@@ -24,6 +24,12 @@ public class DriverPortalPage extends PageObject {
     public DriverPortalPage(WebDriver driver, WebDriverWait wait, GTCDriver gtcDriver) {
         super(driver, wait);
         this.gtcDriver = gtcDriver;
+    }
+
+    public DriverPortalPage openDriverPortalPage(GTCDriver gtcDriver) {
+        LoginPage loginPage = new LoginPage(driver, wait);
+        loginPage.openLoginPage();
+        return loginPage.login(gtcDriver);
     }
 
     public void openTab(String tabName) {

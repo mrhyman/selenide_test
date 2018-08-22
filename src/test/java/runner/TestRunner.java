@@ -1,7 +1,10 @@
+package runner;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.runner.JUnitCore;
 import org.junit.runner.Result;
+import org.junit.runner.Runner;
 import org.junit.runner.notification.Failure;
 import tests.driverPortal.FirstJourneyTabTest;
 import tests.driverPortal.LoginTest;

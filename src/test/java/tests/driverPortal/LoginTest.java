@@ -1,12 +1,29 @@
 package tests.driverPortal;
 
-import org.junit.FixMethodOrder;
-import org.junit.Test;
+import helpers.JDBCconnector;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.junit.*;
+import org.junit.rules.TestWatcher;
+import org.junit.runner.Description;
+import org.junit.runner.Runner;
 import org.junit.runners.MethodSorters;
+import org.slf4j.event.LoggingEvent;
+import pages.GTCDriverPortal.LoginPage;
 import tests.BaseTest;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class LoginTest extends BaseTest {
+
+    @BeforeClass
+    public static void getDrivers() {
+        validDriver = JDBCconnector.getGTCDriver(JDBCconnector.validDriverQuery);
+        invalidDriver = JDBCconnector.getGTCDriver(JDBCconnector.invalidDriverQuery);
+        logger.info("*** Login test suite started! ***");
+
+        loginPage = new LoginPage(driver, wait);
+        loginPage.openLoginPage();
+    }
 
     @Test
     public void correctTitleIsShown() {
@@ -59,5 +76,10 @@ public class LoginTest extends BaseTest {
         loginPage.setRememberMe();
         loginPage.login(validDriver);
         loginPage.verifyLogin(true);
+    }
+
+    @AfterClass
+    public static void logResults() {
+        logger.info("*** Login test suite finished! ***" + "\n");
     }
 }

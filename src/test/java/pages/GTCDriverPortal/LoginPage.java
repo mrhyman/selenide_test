@@ -36,11 +36,12 @@ public class LoginPage extends DriverPortalPage {
         }
     }
 
-    public FirstJourneyTab login(GTCDriver gtcDriver) {
+    public DriverPortalPage login(GTCDriver gtcDriver) {
         enterEmail(gtcDriver.getEmail());
         enterPIN(gtcDriver.getMobileId());
         click(By.tagName("button"));
         wait.until(webDriver -> ((JavascriptExecutor) webDriver).executeScript("return document.readyState").equals("complete"));
+        gtcDriver.setLoggedIn(true);
         return new FirstJourneyTab(driver, wait, gtcDriver);
     }
 
@@ -91,7 +92,7 @@ public class LoginPage extends DriverPortalPage {
 
     public void verifyLogin(Boolean valid) {
         if (valid) {
-            Assert.assertTrue(driver.getCurrentUrl().equals("https://192.0.2.67/driver-portal/"));
+            Assert.assertTrue(driver.findElement(By.id("ext-gen1019")) != null);
         } else {
             WebElement message = driver.findElement(By.className("errorMessage"));
             Assert.assertEquals("Invalid email or password", message.getText());

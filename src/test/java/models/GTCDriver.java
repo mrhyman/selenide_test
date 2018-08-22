@@ -7,7 +7,8 @@ public class GTCDriver {
     private String fullName;
     private String address;
     private boolean useDepotAddress;
-    private DriverCalendar calendar;
+
+    private boolean isLoggedIn = false;
 
     public String getEmail() {
         return email;
@@ -55,5 +56,17 @@ public class GTCDriver {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public boolean isUseDepotAddress() {
+        return useDepotAddress;
+    }
+
+    public boolean isLoggedIn() {
+        return isLoggedIn;
+    }
+
+    public void setLoggedIn(boolean loggedIn) {
+        isLoggedIn = loggedIn;
     }
 }
