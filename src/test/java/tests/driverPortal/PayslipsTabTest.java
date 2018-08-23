@@ -4,17 +4,17 @@ import helpers.JDBCconnector;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import pages.GTCDriverPortal.PayslipsTab;
 import tests.BaseTest;
-
-
 
 public class PayslipsTabTest extends BaseTest {
 
     private static PayslipsTab payslipsTab;
 
     @BeforeClass
-    public static void openPayslipsTab() throws InterruptedException {
+    public static void openPayslipsTab() {
         validDriver = JDBCconnector.getGTCDriver(JDBCconnector.validDriverQuery);
         JDBCconnector.getAddress(validDriver);
 
@@ -22,7 +22,8 @@ public class PayslipsTabTest extends BaseTest {
         payslipsTab.openDriverPortalPage(validDriver);
         payslipsTab.openTab("Payslips");
 
-        Thread.sleep(15000); //fix waiting till loading popups disappear
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(".//*[text()='Loading weeks...']/..")));
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(".//*[text()='Loading jobs...']/..")));
 
         logger.info(validDriver.getMobileId() + " - " + validDriver.getFullName() + " driver is logged in");
         logger.info("*** Payslips tab test suite started! ***");

@@ -3,6 +3,8 @@ package tests.driverPortal;
 import helpers.JDBCconnector;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import pages.GTCDriverPortal.FirstJourneyTab;
 import tests.BaseTest;
 
@@ -17,6 +19,8 @@ public class FirstJourneyTabTest extends BaseTest {
 
         firstJourneyTab = new FirstJourneyTab(driver, wait, validDriver);
         firstJourneyTab.openDriverPortalPage(validDriver);
+
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(".//*[text()='Loading jobs...']/..")));
 
         logger.info(validDriver.getMobileId() + " - " + validDriver.getFullName() + " driver is logged in");
         logger.info("*** First Journey tab test suite started! ***");

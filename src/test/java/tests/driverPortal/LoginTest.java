@@ -1,14 +1,11 @@
 package tests.driverPortal;
 
 import helpers.JDBCconnector;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-import org.junit.*;
-import org.junit.rules.TestWatcher;
-import org.junit.runner.Description;
-import org.junit.runner.Runner;
+import org.junit.AfterClass;
+import org.junit.BeforeClass;
+import org.junit.FixMethodOrder;
+import org.junit.Test;
 import org.junit.runners.MethodSorters;
-import org.slf4j.event.LoggingEvent;
 import pages.GTCDriverPortal.LoginPage;
 import tests.BaseTest;
 

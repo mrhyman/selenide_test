@@ -118,8 +118,4 @@ public class JDBCconnector {
             try { rs.close(); } catch(SQLException se) {}
         }
     }
-
-    public static void getDriverCalendar(String driverQuery) {
-
-    }
 }
