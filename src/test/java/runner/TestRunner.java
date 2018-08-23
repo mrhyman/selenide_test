@@ -8,6 +8,7 @@ import org.junit.runner.Runner;
 import org.junit.runner.notification.Failure;
 import tests.driverPortal.FirstJourneyTabTest;
 import tests.driverPortal.LoginTest;
+import tests.driverPortal.PayslipsTabTest;
 
 
 public class TestRunner {
@@ -15,7 +16,8 @@ public class TestRunner {
         final Result result =
                 JUnitCore.runClasses(
                         LoginTest.class,
-                        FirstJourneyTabTest.class
+                        FirstJourneyTabTest.class,
+                        PayslipsTabTest.class
                 );
 
         Logger logger = LogManager.getLogger(Runner.class);

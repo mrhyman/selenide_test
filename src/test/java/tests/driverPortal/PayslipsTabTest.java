@@ -22,10 +22,15 @@ public class PayslipsTabTest extends BaseTest {
         payslipsTab.openDriverPortalPage(validDriver);
         payslipsTab.openTab("Payslips");
 
-        Thread.sleep(5000);
+        Thread.sleep(15000); //fix waiting till loading popups disappear
 
         logger.info(validDriver.getMobileId() + " - " + validDriver.getFullName() + " driver is logged in");
         logger.info("*** Payslips tab test suite started! ***");
+    }
+
+    @Test
+    public void payslipPageHasCorrectAddress() {
+        payslipsTab.verifyURL();
     }
 
     @Test
@@ -54,7 +59,7 @@ public class PayslipsTabTest extends BaseTest {
     }
 
     @Test
-    public void loadingJobsPopupSiShown() throws InterruptedException {
+    public void loadingJobsPopupIsShown() throws InterruptedException {
         payslipsTab.clickApplyButton();
         Thread.sleep(500);
         payslipsTab.verifyLoadingJobsPopUp();
@@ -65,7 +70,45 @@ public class PayslipsTabTest extends BaseTest {
         payslipsTab.verifyJobsTab();
         payslipsTab.verifyCreditsTab();
         payslipsTab.verifyDeductionsTab();
-        payslipsTab.verifyTableHeaders();
+    }
+
+    @Test
+    public void jobsTableHeadersAreShown() {
+        payslipsTab.clickJobsTab();
+        payslipsTab.verifyTableHeaders("Jobs");
+    }
+
+    @Test
+    public void creditsTableHeadersAreShown() {
+        payslipsTab.clickCreditsTab();
+        payslipsTab.verifyTableHeaders("Credits");
+    }
+
+    @Test
+    public void deductionsTableHeadersAreShown() {
+        payslipsTab.clickDeductionsTab();
+        payslipsTab.verifyTableHeaders("Deductions");
+    }
+
+    @Test
+    public void tableFooterIsShown() {
+        payslipsTab.verifyTableFooter();
+    }
+
+    @Test
+    public void totalFooterIsShown() {
+        payslipsTab.verifyTotalFooter();
+    }
+
+    @Test
+    public void downloadButtonIsShown() {
+        payslipsTab.verifyDownloadButton();
+    }
+
+    @Test
+    public void downloadStarted() throws InterruptedException {
+        payslipsTab.clickDownloadButton();
+        payslipsTab.verifyDownload();
     }
 
     @AfterClass
