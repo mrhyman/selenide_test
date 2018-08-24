@@ -60,9 +60,8 @@ public class PayslipsTabTest extends BaseTest {
     }
 
     @Test
-    public void loadingJobsPopupIsShown() throws InterruptedException {
+    public void loadingJobsPopupIsShown() {
         payslipsTab.clickApplyButton();
-        Thread.sleep(500);
         payslipsTab.verifyLoadingJobsPopUp();
     }
 
