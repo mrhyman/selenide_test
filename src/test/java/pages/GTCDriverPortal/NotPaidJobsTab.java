@@ -1,13 +1,13 @@
 package pages.GTCDriverPortal;
 
 import models.GTCDriver;
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class NotPaidJobsTab extends DriverPortalPage {
@@ -20,12 +20,61 @@ public class NotPaidJobsTab extends DriverPortalPage {
         super(driver, wait, gtcDriver);
     }
 
+    public void verifyURL() {
+        Assert.assertEquals("https://192.0.2.67/driver-portal/#not-paid-jobs", driver.getCurrentUrl()); //hardcoded IP
+    }
+
+    public void verifyDateFromLabel() {
+        WebElement label = driver.findElement(By.id("datefield-1111-labelEl"));
+        Assert.assertEquals("Date from:", label.getText());
+    }
+
+    public void verifyDateFromField() {
+        WebElement dateField = driver.findElement(By.id("datefield-1111-inputEl"));
+        Assert.assertEquals("dd/mm/yyyy", dateField.getAttribute("placeholder"));
+        Assert.assertEquals("", dateField.getAttribute("value"));
+    }
+
+    public void verifyDateToLabel() {
+        WebElement label = driver.findElement(By.id("datefield-1112-labelEl"));
+        Assert.assertEquals("Date to:", label.getText());
+    }
+
+    public void verifyDateToField() {
+        WebElement dateField = driver.findElement(By.id("datefield-1111-inputEl"));
+        Assert.assertEquals("dd/mm/yyyy", dateField.getAttribute("placeholder"));
+        Assert.assertEquals("", dateField.getAttribute("value"));
+    }
+
+    public void verifyStatusLabel() {
+        WebElement label = driver.findElement(By.id("combobox-1110-labelEl"));
+        Assert.assertEquals("Status:", label.getText());
+    }
+
+    public void verifyStatusField() {
+        WebElement dateField = driver.findElement(By.id("combobox-1110-inputEl"));
+        Assert.assertEquals("All", dateField.getAttribute("value"));
+    }
+
     public void clickApplyButton() {
         click(By.id("button-1113"));
     }
 
     public void openStatusDropDown() {
         click(By.id("combobox-1110-bodyEl"));
+    }
+
+    public void selectJobStatus(String status) {
+        List<WebElement> listItems = driver.findElements(By.className("x-boundlist-item"));
+
+        switch (status) {
+            case "Approved" :
+                listItems.get(1).click();
+                break;
+            case "All" :
+                listItems.get(0).click();
+                break;
+        }
     }
 
     public void closeStatusDropDown() {
@@ -70,19 +119,52 @@ public class NotPaidJobsTab extends DriverPortalPage {
                 break;
         }
 
-        for (WebElement el : activeDates) {
-            System.out.println(el.getText());
-        }
-
         for (WebElement currentDate : activeDates) {
-            if (currentDate.getText().contains("Today")) {
-                currentDate.click();
-                break;
-            } else if (Integer.parseInt(currentDate.getText()) == date){
+            if (currentDate.getText().contains("Today") ||
+                    Integer.parseInt(currentDate.getText()) == date) {
                 currentDate.click();
                 break;
             }
         }
+    }
+
+    public void verifyDate(String dateType) {
+        WebElement dateField = null;
+        switch (dateType) {
+            case "dateFrom":
+                dateField = driver.findElement(By.name("startDate"));
+                Assert.assertNotNull(dateField.getAttribute("value"));
+                Assert.assertNotEquals("", dateField.getAttribute("value"));
+                break;
+            case "dateTo":
+                dateField = driver.findElement(By.name("endDate"));
+                Assert.assertNotNull(dateField.getAttribute("value"));
+                Assert.assertNotEquals("", dateField.getAttribute("value"));
+                break;
+        }
+    }
+
+    public void verifyStatus(String status) {
+        WebElement statusField = driver.findElement(By.name("status"));
+        Assert.assertEquals(status, statusField.getAttribute("value"));
+    }
+
+    public void verifyTableHeaders() {
+        int rowsCount = 17;
+        WebElement table = driver.findElement(By.id("headercontainer-1090-innerCt"));
+
+        List<WebElement> headers = table.findElements(By.className("x-column-header"));
+        for (WebElement header : headers) {
+            Assert.assertFalse(header.getText().equals(""));
+            Assert.assertNotNull(header.getText());
+        }
+
+        Assert.assertEquals(rowsCount, headers.size()); //number of jobs table rows
+    }
+
+    public void verifyDownloadButton() {
+        WebElement button = driver.findElement(By.id("button-1115-btnInnerEl"));
+        Assert.assertEquals("Download statement", button.getText());
     }
 }
 

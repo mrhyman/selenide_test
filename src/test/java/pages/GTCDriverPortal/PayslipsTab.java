@@ -54,13 +54,6 @@ public class PayslipsTab  extends DriverPortalPage{
         Assert.assertNotEquals(applyButton, null);
     }
 
-    public void verifyLoadingJobsPopUp() {
-        List<WebElement> elements = driver.findElements(By.className("x-mask-msg-text"));
-        WebElement popUp = elements.get(elements.size() - 1);
-        Assert.assertNotEquals(popUp.getAttribute("value"), "Loading jobs...");
-        Assert.assertNotEquals(popUp, null);
-    }
-
     public void verifyJobsTab() {
         WebElement tab = driver.findElement(By.id("tab-1067-btnInnerEl"));
         Assert.assertEquals("Jobs", tab.getText());
@@ -114,12 +107,6 @@ public class PayslipsTab  extends DriverPortalPage{
         }
 
         Assert.assertEquals(rowsCount, headers.size()); //number of jobs table rows
-    }
-
-    public void verifyTableFooter() {
-        WebElement footer = driver.findElement(By.className("x-docked-summary-bottom"));
-        Assert.assertFalse(footer.getText().equals(""));
-        Assert.assertNotNull(footer.getText());
     }
 
     public void verifyTotalFooter() {

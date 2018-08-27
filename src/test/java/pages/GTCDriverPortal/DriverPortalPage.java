@@ -79,4 +79,17 @@ public class DriverPortalPage extends PageObject {
             Assert.assertEquals(expectedTabs.get(i), tabs.get(i).getText());
         }
     }
+
+    public void verifyLoadingJobsPopUp() {
+        List<WebElement> elements = driver.findElements(By.className("x-mask-msg-text"));
+        WebElement popUp = elements.get(elements.size() - 1);
+        Assert.assertNotEquals(popUp.getAttribute("value"), "Loading jobs...");
+        Assert.assertNotEquals(popUp, null);
+    }
+
+    public void verifyTableFooter() {
+        WebElement footer = driver.findElement(By.className("x-docked-summary-bottom"));
+        Assert.assertFalse(footer.getText().equals(""));
+        Assert.assertNotNull(footer.getText());
+    }
 }
