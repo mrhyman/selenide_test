@@ -4,6 +4,7 @@ import helpers.JDBCconnector;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import pages.GTCDriverPortal.AvailabilityTab;
 import pages.GTCDriverPortal.FirstJourneyTab;
@@ -23,6 +24,8 @@ public class AvailabilityTabTest extends BaseTest {
         availabilityTab.openTab("Availability");
 
         wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(".//*[text()='Loading jobs...']/..")));
+        wait.until(
+                webDriver -> ((JavascriptExecutor) webDriver).executeScript("return document.readyState").equals("complete"));
 
         logger.info(validDriver.getMobileId() + " - " + validDriver.getFullName() + " driver is logged in");
         logger.info("*** Availability tab test suite started! ***");
@@ -47,5 +50,11 @@ public class AvailabilityTabTest extends BaseTest {
     public void correctWeekDaysCount() {
         availabilityTab.verifyWeek();
     }
+
+    @Test
+    public void weekNotesFieldIsShown() {
+        availabilityTab.verifyWeekNotes();
+    }
+
 
 }

@@ -7,6 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class AvailabilityTab extends DriverPortalPage {
@@ -30,23 +31,34 @@ public class AvailabilityTab extends DriverPortalPage {
     }
 
     public void verifyDairyTableName() {
-        List<WebElement> tableNames = driver
-               .findElements(By.xpath("//div[contains(@id, legendTitle)][string-length(text()) > 5]"));
-//                .findElements(By.xpath("//*[contains(text(), 'week')]"));
-//        [contains(text(), 'Days of the week')]
-        for (WebElement el : tableNames) {
-            System.out.println(el.getAttribute("id") + " - " + el.getText());
-        }
-//
-//        System.out.println(tableNames.getAttribute("id"));
-        Assert.assertEquals("Days of the week", tableNames.get(0).getText());
+        WebElement tableName = driver
+               .findElements(By.xpath("//*[contains(@id, 'fieldset') " +
+                       "and contains(@id, 'legendTitle') " +
+                       "and not(contains(@style, 'display: none'))]"))
+               .get(2);
+        Assert.assertEquals("Days of the week", tableName.getText());
     }
 
     public void verifyWeek() {
-        WebElement dairy = driver.findElement(By.id("fieldset-2002-body"));
-        List<WebElement> week = dairy.findElements(By.className("x-panel"));
-        Assert.assertEquals(7, week.size());
+        List<WebElement> week = driver.findElements(By.xpath("//*[contains(@id, 'driverdayavailabilityform')" +
+                "and contains(@id, 'targetEl')]"));
+        ArrayList<WebElement> modifiedWeek = new ArrayList<>();
+        for (WebElement w: week) {
+            if (!w.getText().equals("") || !w.getText().isEmpty()) {
+                modifiedWeek.add(w);
+            }
+        }
+        Assert.assertEquals(7, modifiedWeek.size());
 
+    }
+
+    public void verifyWeekNotes() {
+        WebElement weekNotes = driver.findElements(By.className("x-vbox-form-item")).get(1);
+        WebElement input = weekNotes.findElement(By.name("weekNotes"));
+        WebElement label = weekNotes.findElement(By.xpath("//label[contains(@for, '"+input.getAttribute("id")+"')]"));
+
+        Assert.assertEquals("week notes:", label.getText());
+        Assert.assertEquals("", input.getAttribute("value"));
     }
 }
 

@@ -9,6 +9,7 @@ import org.junit.BeforeClass;
 import org.junit.Rule;
 import org.junit.rules.TestWatcher;
 import org.junit.runner.Description;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -17,6 +18,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.GTCDriverPortal.DriverPortalPage;
 import pages.GTCDriverPortal.LoginPage;
 import tests.driverPortal.LoginTest;
+
+import java.util.concurrent.TimeUnit;
 
 public class BaseTest {
 
@@ -34,7 +37,8 @@ public class BaseTest {
     public static void setup() {
 
         driver = new ChromeDriver();
-        wait = new WebDriverWait(driver,25);
+        driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
+        wait = new WebDriverWait(driver, 25);
         driver.manage().window().maximize();
     }
 
