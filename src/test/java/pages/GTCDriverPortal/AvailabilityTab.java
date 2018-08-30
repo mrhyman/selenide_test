@@ -60,5 +60,21 @@ public class AvailabilityTab extends DriverPortalPage {
         Assert.assertEquals("week notes:", label.getText());
         Assert.assertEquals("", input.getAttribute("value"));
     }
+
+    public void verifyButtons() {
+        List<WebElement> buttons = driver.findElements(By.xpath("//a[contains(@id, 'button')]"));
+        ArrayList<WebElement> visibleButtons = new ArrayList<>();
+        for(WebElement el: buttons) {
+            if (el.isDisplayed()) {
+                visibleButtons.add(el);
+            }
+        }
+
+        for(WebElement el: visibleButtons) {
+            System.out.println(el.getAttribute("id") + " - " + el.getText());
+        }
+
+        Assert.assertEquals(10, buttons.size());
+    }
 }
 

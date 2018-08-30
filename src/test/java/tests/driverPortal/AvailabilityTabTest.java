@@ -7,7 +7,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import pages.GTCDriverPortal.AvailabilityTab;
-import pages.GTCDriverPortal.FirstJourneyTab;
 import tests.BaseTest;
 
 public class AvailabilityTabTest extends BaseTest {
@@ -54,6 +53,11 @@ public class AvailabilityTabTest extends BaseTest {
     @Test
     public void weekNotesFieldIsShown() {
         availabilityTab.verifyWeekNotes();
+    }
+
+    @Test
+    public void buttonsAreShown() {
+        availabilityTab.verifyButtons();
     }
 
 
